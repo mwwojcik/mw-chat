@@ -1,0 +1,30 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+!includeurl https://raw.githubusercontent.com/skleanthous/C4-PlantumlSkin/master/build/output/c4.puml
+skinparam linetype polyline
+skinparam linetype ortho
+
+' uncomment the following line and comment the first to use locally
+' !include C4_Deployment.puml
+
+AddTagSupport("fallback", $bgColor="#c0c0c0")
+WithoutPropertyHeader()
+
+' dynamic legend is used (activated in last line)
+' LAYOUT_WITH_LEGEND()
+
+title Deployment Diagram for chat system
+
+Deployment_Node(mdc, "Main data center", "mdc", "Main data center"){
+
+ Deployment_Node_L(dn, "bigbank-api***\tx8", "", "A web server residing in the web server farm, accessed via F5 BIG-IP LTMs."){
+        AddProperty("Java Version", "8")
+        Deployment_Node_L(apache, "Apache Tomcat", "Apache Tomcat 8.x", "An open source Java EE web server."){
+            Container(api, "API Application", "Java and Spring MVC", "Provides Internet Banking functionality via a JSON/HTTPS API.")
+        }
+    }
+
+}
+
+
+@enduml
