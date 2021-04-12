@@ -4,6 +4,8 @@
 skinparam linetype polyline
 skinparam linetype ortho
 
+LAYOUT_LEFT_RIGHT()
+
 !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
 !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
 !include DEVICONS/angular.puml
@@ -11,7 +13,6 @@ skinparam linetype ortho
 !include DEVICONS/msql_server.puml
 !include FONTAWESOME/users.puml
 
-LAYOUT_WITH_LEGEND()
 
 Person(clerk, "Clerk", "People that sell product", $sprite="users")
 Person(customer, "Customer", "People that need product", $sprite="users")
@@ -23,22 +24,24 @@ Container(spa, "SPA", "angular", "The main interface that the customer interacts
 
 Container(gateway, "API Gateway", "java", "Handles all business logic", $sprite="java")
 Container(chatapp, "ChatApp", "java", "Main chat application", $sprite="java")
-Container(chatInstanceDiscovery, "Chat Instance Discovery", "java", "Chat Instance Discovery", $sprite="java")
-Container(chatLoadBalancer, "Chat Load Balancer", "java", "Chat Load Balancer", $sprite="java")
-ContainerQueue(chatqueue, "Chat Queue", "java", "Queue to send communication between different instances", $sprite="java")
+Container(chatinstanceDiscovery, "ChatInstanceDiscovery", "java", "Component containing a registry of instances and open connections. It is able to find the instance based on the ID of the message recipient (connection owner). ", $sprite="java")
+Container(chatinstanceLoadBalancer, "ChatInstanceLoadBalancer", "java", "Component directing traffic to the correct instances  ", $sprite="java")
 
 
+ContainerQueue(chatqueue, "Chat Queue", "java", "Component  forwarding messages to the instance containing the connection to the recipient of the chat message.The actual queue is identified on the basis of the chat message addressee ID. ", $sprite="java")
 ContainerDb(db, "Database", "Mongo DB", "Holds chat message history for user", $sprite="msql_server")
 
 }
 Rel(clerk, spa, "Uses", "https")
 Rel(customer, spa, "Uses", "https")
-Rel(spa, gateway, "Uses", "https")
-Rel(gateway,keycloak,"Uses", "https")
-Rel(gateway,chatLoadBalancer,"Uses", "https")
-Rel(chatLoadBalancer,chatInstanceDiscovery,"Uses", "https")
-Rel(chatLoadBalancer,chatapp,"Uses", "https")
-Rel(chatInstanceDiscovery,chatapp,"Discovery"," ")
-Rel_R(chatapp, db, "Reads/Writes")
-Rel_R(chatapp,chatqueue,"Readns/Writes")
+Rel(spa, gateway, "Uses", "Websocket")
+Rel_R(gateway,keycloak,"Uses", "https")
+Rel(gateway,chatinstanceLoadBalancer,"Uses", "Websocket")
+Rel_L(chatinstanceLoadBalancer,chatinstanceDiscovery,"Uses","REST")
+Rel(chatinstanceLoadBalancer,chatapp,"Direct","Websocket")
+Rel(chatapp,chatqueue,"Readns/Writes")
+Rel(chatapp, db, "Reads/Writes")
+Rel(chatinstanceDiscovery,chatapp,"HealthCheck")
+Rel_L(chatapp,chatinstanceDiscovery,"Register connection")
+
 @enduml
