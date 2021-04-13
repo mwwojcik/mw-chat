@@ -14,8 +14,8 @@ LAYOUT_LEFT_RIGHT()
 !include FONTAWESOME/users.puml
 
 
-Person(clerk, "Clerk", "People that sell product", $sprite="users")
-Person(customer, "Customer", "People that need product", $sprite="users")
+Person(seller, "Seller", "People that sell product", $sprite="users")
+Person(buyer, "Buyer", "People that need product", $sprite="users")
 
 Container_Ext(keycloak, "Keycloak", "java", "Authenticate user", $sprite="java")
 
@@ -32,8 +32,8 @@ ContainerQueue(chatqueue, "Chat Queue", "java", "Component  forwarding messages 
 ContainerDb(db, "Database", "Mongo DB", "Holds chat message history for user", $sprite="msql_server")
 
 }
-Rel(clerk, spa, "Uses", "https")
-Rel(customer, spa, "Uses", "https")
+Rel(seller, spa, "Uses", "https")
+Rel(buyer, spa, "Uses", "https")
 
 BiRel(spa, gateway, "Stateful", "Websocket")
 Rel_R(gateway,keycloak,"Uses", "https")
