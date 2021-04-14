@@ -16,16 +16,28 @@ WithoutPropertyHeader()
 
 title Deployment Diagram for chat system
 
-Deployment_Node(mdc, "Main data center", "mdc", "Main data center"){
-
- Deployment_Node_L(dn, "bigbank-api***\tx8", "", "A web server residing in the web server farm, accessed via F5 BIG-IP LTMs."){
-        AddProperty("Java Version", "8")
-        Deployment_Node_L(apache, "Apache Tomcat", "Apache Tomcat 8.x", "An open source Java EE web server."){
-            Container(api, "API Application", "Java and Spring MVC", "Provides Internet Banking functionality via a JSON/HTTPS API.")
-        }
-    }
-
+Deployment_Node(chatLoadBalancerNode,"Chat load balancer","","Spring Cloud Load Balancer"){
+    Container(chatLoadBalancer, "Chat load balancer", "java", "Balances traffic between different instances of the chat application", $sprite="java")
 }
 
+Deployment_Node_R(gatewayNode," "," "){
+  Container(gateway, "API Gateway", "java", "Handles all business logic", $sprite="java")
+}
+
+Deployment_Node_R(chatAppNode," "," "){
+  Container(chatapp, "ChatApp", "Spring Reactive Streams", "It implements the logic of the chat. Receives a message from the sender and checks if the recipient has an open connection locally. If so, it sends a message, if not, it identifies the correct instance (using the register) that serves the given recipient. The message goes to the correct queue.", $sprite="java")
+}
+
+Deployment_Node_R(chatinstanceDiscoveryNode," "," "){
+  Container(chatinstanceDiscovery, "ChatInstanceDiscovery", "java", "Component containing a registry of instances and open connections. It is able to find the instance based on the ID of the message recipient (connection owner). ", $sprite="java")
+}
+
+Deployment_Node_R(chatqueueNode," "," "){
+  ContainerQueue(chatqueue, "Chat Queue", "java", "Component  forwarding messages to the instance containing the connection to the recipient of the chat message.The actual queue is identified on the basis of the chat message addressee ID. ", $sprite="java")
+}
+
+Deployment_Node_R(chatDbNode," "," "){
+  ContainerDb(db, "Database", "Mongo DB", "Holds chat message history for user", $sprite="msql_server")
+}
 
 @enduml
