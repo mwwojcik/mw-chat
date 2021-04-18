@@ -1,6 +1,14 @@
-mw/chat/ChatApplication.java
- mw.chat.ChatApplication
-mw/chat/infrastructure/ChatConfiguration.java
- mw.chat.infrastructure.ChatConfiguration
 mw/chat/web/ChatEchoHandler.java
  mw.chat.web.ChatEchoHandler
+mw/chat/model/UserName.java
+ mw.chat.model.UserName
+mw/chat/model/ChatMessage.java
+ mw.chat.model.ChatMessage
+mw/chat/ChatApplication.java
+ mw.chat.ChatApplication
+mw/chat/service/MultiUserChatProcessor.java
+ mw.chat.service.MultiUserChatProcessor
+mw/chat/infrastructure/ChatConfiguration.java
+ mw.chat.infrastructure.ChatConfiguration
+mw/chat/web/ChatHandler.java
+ mw.chat.web.ChatHandler
