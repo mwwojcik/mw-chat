@@ -22,3 +22,13 @@ These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
 
+
+````
+$ wscat -c ws://echo.websocket.org
+Connected (press CTRL+C to quit)
+> hi there
+< hi there
+> are you a happy parrot?
+< are you a happy parrot?
+
+````
