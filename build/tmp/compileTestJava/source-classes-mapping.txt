@@ -1,2 +1,4 @@
 mw/chat/ChatApplicationTests.java
  mw.chat.ChatApplicationTests
+mw/chat/web/MessagesTopicHandlerTest.java
+ mw.chat.web.MessagesTopicHandlerTest

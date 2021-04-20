@@ -13,12 +13,14 @@ import reactor.core.publisher.Mono;
 public class MultiUserChatProcessor {
 
     ConcurrentMap<UserName, WebSocketSession> users = new ConcurrentHashMap<>();
-
-    ObjectMapper objectMapper=new ObjectMapper();
+    ObjectMapper objectMapper = new ObjectMapper();
 
     public Mono<Void> register(UserName user, WebSocketSession session) {
         users.put(user, session);
-        return session.receive().flatMap(webSocketMessage->deliver(session, webSocketMessage)).then().doFinally(signal ->  users.remove (user));
+        return session.receive()
+                      .flatMap(webSocketMessage -> deliver(session, webSocketMessage))
+                      .then()
+                      .doFinally(signal -> users.remove(user));
     }
 
 
@@ -27,17 +29,23 @@ public class MultiUserChatProcessor {
         ChatMessage message;
         try {
             message = objectMapper.readValue(payload, ChatMessage.class);
-            UserName targetId = UserName.from(message.getUser());
-            if (users.containsKey(targetId)) {
+            UserName targetId = targetUser(message);
+            if (userIsOnline(targetId)) {
                 WebSocketSession targetSession = users.get(targetId);
-                if (null != targetSession) {
                     WebSocketMessage textMessage = targetSession.textMessage(message.getMessage());
                     return targetSession.send(Mono.just(textMessage));
-                }
             }
         } catch (JsonProcessingException e) {
             return session.send(Mono.just(session.textMessage(e.getMessage())));
         }
-        return  session.send(Mono.just(session.textMessage("target user is not online")));
+        return session.send(Mono.just(session.textMessage("target user is not online")));
+    }
+
+    private UserName targetUser(ChatMessage message) {
+        return UserName.from(message.getUser());
+    }
+
+    private boolean userIsOnline(UserName targetId) {
+        return users.containsKey(targetId);
     }
 }
