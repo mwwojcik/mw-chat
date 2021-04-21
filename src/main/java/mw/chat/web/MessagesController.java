@@ -24,7 +24,7 @@ import reactor.core.publisher.FluxSink;
 @RequestMapping("/api/messages")
 public class MessagesController {
 
-    private ReactiveMessageRepository repo=new ReactiveMessageRepository(Executors.newFixedThreadPool(10));
+    private ReactiveMessageRepository repo=new ReactiveMessageRepository(Executors.newSingleThreadExecutor());
 
 
     @GetMapping(path = "/server-messages-events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
