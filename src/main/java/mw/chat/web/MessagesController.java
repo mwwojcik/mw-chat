@@ -8,6 +8,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
+import java.util.stream.IntStream;
+import javax.annotation.PostConstruct;
 import mw.chat.service.MessagesTopicProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,9 +29,9 @@ public class MessagesController {
     private ReactiveMessageRepository repo=new ReactiveMessageRepository(Executors.newSingleThreadExecutor());
 
 
+
     @GetMapping(path = "/server-messages-events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> streamFlux() {
-        repo.add("");
         return Flux.create(repo);
     }
 
@@ -39,6 +41,10 @@ public class MessagesController {
      return ResponseEntity.ok().build() ;
      }
 
+     @PostConstruct
+     public void init(){
+         IntStream.range(0,1000).forEach(it->repo.add(UUID.randomUUID().toString()));
+     }
 }
 
 class ReactiveMessageRepository implements Consumer<FluxSink<String>> {

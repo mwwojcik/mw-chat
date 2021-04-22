@@ -6,9 +6,8 @@ mw/chat/model/ChatMessage.java
  mw.chat.model.ChatMessage
 mw/chat/model/UserName.java
  mw.chat.model.UserName
-mw/chat/web/MessagesController.java
- mw.chat.web.MessagesController
- mw.chat.web.ReactiveMessageRepository
+mw/chat/web/MessagesTopicHandler.java
+ mw.chat.web.MessagesTopicHandler
 mw/chat/service/MultiUserChatProcessor.java
  mw.chat.service.MultiUserChatProcessor
 mw/chat/infrastructure/ChatConfiguration.java
@@ -17,5 +16,6 @@ mw/chat/web/ChatEchoHandler.java
  mw.chat.web.ChatEchoHandler
 mw/chat/web/ChatHandler.java
  mw.chat.web.ChatHandler
-mw/chat/web/MessagesTopicHandler.java
- mw.chat.web.MessagesTopicHandler
+mw/chat/web/MessagesController.java
+ mw.chat.web.MessagesController
+ mw.chat.web.ReactiveMessageRepository
