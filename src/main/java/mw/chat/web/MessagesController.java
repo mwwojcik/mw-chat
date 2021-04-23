@@ -1,17 +1,13 @@
 package mw.chat.web;
 
-import java.time.Duration;
-import java.time.LocalTime;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
-import java.util.stream.IntStream;
 import javax.annotation.PostConstruct;
-import mw.chat.service.MessagesTopicProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,25 +22,28 @@ import reactor.core.publisher.FluxSink;
 @RequestMapping("/api/messages")
 public class MessagesController {
 
-    private ReactiveMessageRepository repo=new ReactiveMessageRepository(Executors.newSingleThreadExecutor());
-
-
+    private ReactiveMessageRepository repo = new ReactiveMessageRepository(Executors.newFixedThreadPool(5));
 
     @GetMapping(path = "/server-messages-events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> streamFlux() {
+        repo.add("");
         return Flux.create(repo);
     }
 
     @PostMapping
     public ResponseEntity addMessage(@RequestBody String message) {
         repo.add(message);
-     return ResponseEntity.ok().build() ;
-     }
+        return ResponseEntity.ok().build();
+    }
 
-     @PostConstruct
-     public void init(){
-         IntStream.range(0,1000).forEach(it->repo.add(UUID.randomUUID().toString()));
-     }
+    @PostConstruct
+    public void addInitially( ) {
+        for (int i = 0; i < 1000000; i++) {
+            repo.add(UUID.randomUUID().toString());
+        }
+    }
+
+
 }
 
 class ReactiveMessageRepository implements Consumer<FluxSink<String>> {
@@ -56,18 +55,19 @@ class ReactiveMessageRepository implements Consumer<FluxSink<String>> {
         this.executor = executor;
     }
 
-    public void add(String message){
+    public void add(String message) {
         messages.offer(message);
     }
 
     @Override
     public void accept(FluxSink<String> fluxSink) {
-        executor.execute(()->{
+        executor.execute(() -> {
             try {
-                while (true){
-                    fluxSink.next(messages.take());
+                while (true) {
+                        Thread.sleep(2000);
+                        fluxSink.next(messages.take());
                 }
-            }catch (InterruptedException ex){
+            } catch (InterruptedException ex) {
                 throw new IllegalStateException(ex);
             }
         });
