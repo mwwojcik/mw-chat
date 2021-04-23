@@ -36,6 +36,7 @@ public class MessagesController {
     @PostMapping
     public ResponseEntity addMessage(@RequestBody String message) {
         repo.add(message);
+        repoWithHistory.add(message);
         return ResponseEntity.ok().build();
     }
 }
