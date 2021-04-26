@@ -1,4 +1,10 @@
 mw/chat/ChatApplicationTests.java
  mw.chat.ChatApplicationTests
+mw/chat/reactor/CountryNamesFluxSinkConsumer.java
+ mw.chat.reactor.CountryNamesFluxSinkConsumer
+mw/chat/reactor/DefaultSimpleSubscriber.java
+ mw.chat.reactor.DefaultSimpleSubscriber
 mw/chat/web/MessagesTopicHandlerTest.java
  mw.chat.web.MessagesTopicHandlerTest
+mw/chat/reactor/ReactorFluxCreateTests.java
+ mw.chat.reactor.ReactorFluxCreateTests

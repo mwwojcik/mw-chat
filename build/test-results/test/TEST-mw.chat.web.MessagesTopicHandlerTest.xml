@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="mw.chat.web.MessagesTopicHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-20T10:23:41" hostname="APS00087715-MB" time="1.006">
-  <properties/>
-  <testcase name="Should react on insert to messages" classname="mw.chat.web.MessagesTopicHandlerTest" time="1.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
