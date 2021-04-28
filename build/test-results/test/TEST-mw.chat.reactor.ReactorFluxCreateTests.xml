@@ -1,109 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="mw.chat.reactor.ReactorFluxCreateTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-25T07:23:34" hostname="APS00087715-MB" time="0.308">
+<testsuite name="mw.chat.reactor.ReactorFluxCreateTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-28T20:57:40" hostname="APS00087715-MB" time="0.179">
   <properties/>
-  <testcase name="Should emit simple flux signal with country names" classname="mw.chat.reactor.ReactorFluxCreateTests" time="0.308"/>
-  <system-out><![CDATA[09:23:34.480 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-=> DefaultSimpleSubscriber Received : Malaysia
-=> DefaultSimpleSubscriber Received : Grenada
-=> DefaultSimpleSubscriber Received : New Zealand
-=> DefaultSimpleSubscriber Received : Bhutan
-=> DefaultSimpleSubscriber Received : Tunisia
-=> DefaultSimpleSubscriber Received : Bulgaria
-=> DefaultSimpleSubscriber Received : Australia
-=> DefaultSimpleSubscriber Received : Canada
-=> DefaultSimpleSubscriber Received : Malaysia
-=> DefaultSimpleSubscriber Received : India
-=> DefaultSimpleSubscriber Received : Papua New Guinea
-=> DefaultSimpleSubscriber Received : Congo
-=> DefaultSimpleSubscriber Received : Jordan
-=> DefaultSimpleSubscriber Received : Pakistan
-=> DefaultSimpleSubscriber Received : Sierra Leone
-=> DefaultSimpleSubscriber Received : Bahrain
-=> DefaultSimpleSubscriber Received : Cabo Verde
-=> DefaultSimpleSubscriber Received : Norway
-=> DefaultSimpleSubscriber Received : Ireland
-=> DefaultSimpleSubscriber Received : Egypt
-=> DefaultSimpleSubscriber Received : Sri Lanka
-=> DefaultSimpleSubscriber Received : El Salvador
-=> DefaultSimpleSubscriber Received : Tajikistan
-=> DefaultSimpleSubscriber Received : Luxembourg
-=> DefaultSimpleSubscriber Received : Cameroon
-=> DefaultSimpleSubscriber Received : Madagascar
-=> DefaultSimpleSubscriber Received : Seychelles
-=> DefaultSimpleSubscriber Received : Kazakhstan
-=> DefaultSimpleSubscriber Received : Tajikistan
-=> DefaultSimpleSubscriber Received : Dominica
-=> DefaultSimpleSubscriber Received : Cameroon
-=> DefaultSimpleSubscriber Received : Germany
-=> DefaultSimpleSubscriber Received : Canada
-=> DefaultSimpleSubscriber Received : Russian Federation
-=> DefaultSimpleSubscriber Received : Malta
-=> DefaultSimpleSubscriber Received : Bhutan
-=> DefaultSimpleSubscriber Received : Serbia
-=> DefaultSimpleSubscriber Received : Canada
-=> DefaultSimpleSubscriber Received : Syrian Arab Republic
-=> DefaultSimpleSubscriber Received : South Africa
-=> DefaultSimpleSubscriber Received : Cameroon
-=> DefaultSimpleSubscriber Received : Philippines
-=> DefaultSimpleSubscriber Received : Romania
-=> DefaultSimpleSubscriber Received : Portugal
-=> DefaultSimpleSubscriber Received : Mauritius
-=> DefaultSimpleSubscriber Received : Tajikistan
-=> DefaultSimpleSubscriber Received : Italy
-=> DefaultSimpleSubscriber Received : Bosnia and Herzegovina
-=> DefaultSimpleSubscriber Received : Seychelles
-=> DefaultSimpleSubscriber Received : Bosnia and Herzegovina
-=> DefaultSimpleSubscriber Received : Sweden
-=> DefaultSimpleSubscriber Received : Nauru
-=> DefaultSimpleSubscriber Received : Eswatini
-=> DefaultSimpleSubscriber Received : Belgium
-=> DefaultSimpleSubscriber Received : Bolivia (Plurinational State of)
-=> DefaultSimpleSubscriber Received : Uruguay
-=> DefaultSimpleSubscriber Received : France
-=> DefaultSimpleSubscriber Received : Sao Tome and Principe
-=> DefaultSimpleSubscriber Received : Russian Federation
-=> DefaultSimpleSubscriber Received : San Marino
-=> DefaultSimpleSubscriber Received : Venezuela (Bolivarian Republic of)
-=> DefaultSimpleSubscriber Received : Bosnia and Herzegovina
-=> DefaultSimpleSubscriber Received : Panama
-=> DefaultSimpleSubscriber Received : Philippines
-=> DefaultSimpleSubscriber Received : Cuba
-=> DefaultSimpleSubscriber Received : Niger
-=> DefaultSimpleSubscriber Received : Nauru
-=> DefaultSimpleSubscriber Received : Viet Nam
-=> DefaultSimpleSubscriber Received : Kuwait
-=> DefaultSimpleSubscriber Received : Belarus
-=> DefaultSimpleSubscriber Received : Bosnia and Herzegovina
-=> DefaultSimpleSubscriber Received : Monaco
-=> DefaultSimpleSubscriber Received : Malawi
-=> DefaultSimpleSubscriber Received : Niger
-=> DefaultSimpleSubscriber Received : Bahamas
-=> DefaultSimpleSubscriber Received : Guyana
-=> DefaultSimpleSubscriber Received : Sao Tome and Principe
-=> DefaultSimpleSubscriber Received : United Arab Emirates
-=> DefaultSimpleSubscriber Received : Cambodia
-=> DefaultSimpleSubscriber Received : Latvia
-=> DefaultSimpleSubscriber Received : Marshall Islands
-=> DefaultSimpleSubscriber Received : Bahrain
-=> DefaultSimpleSubscriber Received : Bangladesh
-=> DefaultSimpleSubscriber Received : Uruguay
-=> DefaultSimpleSubscriber Received : Tanzania, United Republic of
-=> DefaultSimpleSubscriber Received : Belize
-=> DefaultSimpleSubscriber Received : Lebanon
-=> DefaultSimpleSubscriber Received : Viet Nam
-=> DefaultSimpleSubscriber Received : Angola
-=> DefaultSimpleSubscriber Received : Thailand
-=> DefaultSimpleSubscriber Received : Hungary
-=> DefaultSimpleSubscriber Received : Timor-Leste
-=> DefaultSimpleSubscriber Received : Colombia
-=> DefaultSimpleSubscriber Received : Netherlands
-=> DefaultSimpleSubscriber Received : Ghana
-=> DefaultSimpleSubscriber Received : Ukraine
-=> DefaultSimpleSubscriber Received : Madagascar
-=> DefaultSimpleSubscriber Received : Uzbekistan
-=> DefaultSimpleSubscriber Received : Romania
-=> DefaultSimpleSubscriber Received : Papua New Guinea
+  <testcase name="Should emit max 10 flux signals" classname="mw.chat.reactor.ReactorFluxCreateTests" time="0.179"/>
+  <system-out><![CDATA[22:57:41.010 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+=> DefaultSimpleSubscriber Received : Nigeria
+emitting=>Nigeria
+=> DefaultSimpleSubscriber Received : Brazil
+emitting=>Brazil
+=> DefaultSimpleSubscriber Received : Ecuador
 => DefaultSimpleSubscriber Completed
+emitting=>Ecuador
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
