@@ -1,6 +1,10 @@
 package mw.chat.reactor.fileservice;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 import mw.chat.reactor.DefaultSimpleSubscriber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -30,5 +34,17 @@ public class FluxFileReaderTest {
         var file = workingDir.resolve(Path.of("content.txt"));
 
         bufferedFileReader.readFileContent(file).subscribe(new DefaultSimpleSubscriber());
+    }
+
+    @DisplayName("shoul generate content file")
+    @Test
+    void shoulGenerateContentFile()
+        throws IOException {
+        List<String> pLines = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            pLines.add(String.format("line %s", i));
+        }
+        var result = workingDir.resolve(Path.of("content.txt"));
+        Files.write(result, pLines);
     }
 }

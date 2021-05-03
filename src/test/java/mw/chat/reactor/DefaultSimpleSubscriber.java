@@ -6,7 +6,7 @@ import org.reactivestreams.Subscription;
 
 public class DefaultSimpleSubscriber implements Subscriber<Object> {
 
-    private String name ;
+    private String name="" ;
 
     public DefaultSimpleSubscriber() {
     }
