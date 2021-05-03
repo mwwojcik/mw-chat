@@ -9,7 +9,8 @@ import org.junit.jupiter.api.Test;
 public class FluxFileReaderTest {
 
     private Path workingDir;
-    private FluxFileReader fileReader=new FluxFileReader();
+    private FluxFileReader fileReader = new FluxFileReader();
+    private FluxBufferedFileReader bufferedFileReader = new FluxBufferedFileReader();
 
     @BeforeEach
     public void init() {
@@ -21,5 +22,13 @@ public class FluxFileReaderTest {
     void shouldCreateFluxFromTextFileLines() {
         var file = workingDir.resolve(Path.of("content.txt"));
         fileReader.fileContent(file).take(2).subscribe(DefaultSimpleSubscriber.create());
+    }
+
+    @DisplayName("Should create flux from buffered file lines")
+    @Test
+    void shouldCreateFluxFromBufferedFileLines() {
+        var file = workingDir.resolve(Path.of("content.txt"));
+
+        bufferedFileReader.readFileContent(file).subscribe(new DefaultSimpleSubscriber());
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.fileservice.FluxFileReaderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-03T19:21:53" hostname="APS00087715-MB" time="0.143">
+  <properties/>
+  <testcase name="Should create flux from buffered file lines" classname="mw.chat.reactor.fileservice.FluxFileReaderTest" time="0.143"/>
+  <system-out><![CDATA[21:21:54.070 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+null Received : this
+null Received : is
+null Received : my
+null Received : file
+null Completed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
