@@ -5,6 +5,7 @@ import mw.chat.reactor.DefaultSimpleSubscriber;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
+import reactor.util.concurrent.Queues;
 
 public class DelayElementsOperatorTest {
 
@@ -33,6 +34,11 @@ public class DelayElementsOperatorTest {
      //WARRNING!! Different log() position - completelly different result!
      Flux.range(1,100).delayElements(Duration.ofMillis(500)).log().subscribe(DefaultSimpleSubscriber.create());
      Thread.sleep(60000);
+
+     /*Queues - minimal value of request buffer size
+     public static final int XS_BUFFER_SIZE    = Math.max(8,
+			Integer.parseInt(System.getProperty("reactor.bufferSize.x", "32")));
+      */
     }
 }
 
