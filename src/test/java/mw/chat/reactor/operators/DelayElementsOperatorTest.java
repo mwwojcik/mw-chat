@@ -29,7 +29,9 @@ public class DelayElementsOperatorTest {
     void shouldPresentDelayElementsOperator()
         throws InterruptedException {
 
-     Flux.range(1,100).log().delayElements(Duration.ofMillis(50)).subscribe(DefaultSimpleSubscriber.create());
+     //Flux.range(1,100).log().delayElements(Duration.ofMillis(500)).subscribe(DefaultSimpleSubscriber.create());
+     //WARRNING!! Different log() position - completelly different result!
+     Flux.range(1,100).delayElements(Duration.ofMillis(500)).log().subscribe(DefaultSimpleSubscriber.create());
      Thread.sleep(60000);
     }
 }

@@ -1,209 +1,29 @@
-W09:46:11.510 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-z09:46:11.531 [Test worker] INFO reactor.Flux.Range.1 - | onSubscribe([Synchronous Fuseable] FluxRange.RangeSubscription)
-F09:46:11.535 [Test worker] INFO reactor.Flux.Range.1 - | request(32)
-D09:46:11.536 [Test worker] INFO reactor.Flux.Range.1 - | onNext(1)
-D09:46:11.562 [Test worker] INFO reactor.Flux.Range.1 - | onNext(2)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(3)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(4)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(5)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(6)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(7)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(8)
-D09:46:11.564 [Test worker] INFO reactor.Flux.Range.1 - | onNext(9)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(10)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(11)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(12)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(13)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(14)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(15)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(16)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(17)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(18)
-E09:46:11.565 [Test worker] INFO reactor.Flux.Range.1 - | onNext(19)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(20)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(21)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(22)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(23)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(24)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(25)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(26)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(27)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(28)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(29)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(30)
-E09:46:11.566 [Test worker] INFO reactor.Flux.Range.1 - | onNext(31)
-E09:46:11.567 [Test worker] INFO reactor.Flux.Range.1 - | onNext(32)
+W22:24:47.100 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+j22:24:47.123 [Test worker] INFO reactor.Flux.ConcatMap.1 - onSubscribe(FluxConcatMap.ConcatMapImmediate)
+O22:24:47.125 [Test worker] INFO reactor.Flux.ConcatMap.1 - request(unbounded)
+E22:24:47.663 [parallel-1] INFO reactor.Flux.ConcatMap.1 - onNext(1)
 7parallel-1 => => DefaultSimpleSubscriber Received : 1
+E22:24:48.177 [parallel-2] INFO reactor.Flux.ConcatMap.1 - onNext(2)
 7parallel-2 => => DefaultSimpleSubscriber Received : 2
+E22:24:48.681 [parallel-3] INFO reactor.Flux.ConcatMap.1 - onNext(3)
 7parallel-3 => => DefaultSimpleSubscriber Received : 3
+E22:24:49.196 [parallel-4] INFO reactor.Flux.ConcatMap.1 - onNext(4)
 7parallel-4 => => DefaultSimpleSubscriber Received : 4
+E22:24:49.715 [parallel-5] INFO reactor.Flux.ConcatMap.1 - onNext(5)
 7parallel-5 => => DefaultSimpleSubscriber Received : 5
+E22:24:50.230 [parallel-6] INFO reactor.Flux.ConcatMap.1 - onNext(6)
 7parallel-6 => => DefaultSimpleSubscriber Received : 6
+E22:24:50.746 [parallel-7] INFO reactor.Flux.ConcatMap.1 - onNext(7)
 7parallel-7 => => DefaultSimpleSubscriber Received : 7
+E22:24:51.259 [parallel-8] INFO reactor.Flux.ConcatMap.1 - onNext(8)
 7parallel-8 => => DefaultSimpleSubscriber Received : 8
+E22:24:51.782 [parallel-9] INFO reactor.Flux.ConcatMap.1 - onNext(9)
 7parallel-9 => => DefaultSimpleSubscriber Received : 9
+G22:24:52.299 [parallel-10] INFO reactor.Flux.ConcatMap.1 - onNext(10)
 9parallel-10 => => DefaultSimpleSubscriber Received : 10
+G22:24:52.807 [parallel-11] INFO reactor.Flux.ConcatMap.1 - onNext(11)
 9parallel-11 => => DefaultSimpleSubscriber Received : 11
+G22:24:53.309 [parallel-12] INFO reactor.Flux.ConcatMap.1 - onNext(12)
 9parallel-12 => => DefaultSimpleSubscriber Received : 12
+F22:24:53.815 [parallel-1] INFO reactor.Flux.ConcatMap.1 - onNext(13)
 8parallel-1 => => DefaultSimpleSubscriber Received : 13
-8parallel-2 => => DefaultSimpleSubscriber Received : 14
-8parallel-3 => => DefaultSimpleSubscriber Received : 15
-8parallel-4 => => DefaultSimpleSubscriber Received : 16
-8parallel-5 => => DefaultSimpleSubscriber Received : 17
-8parallel-6 => => DefaultSimpleSubscriber Received : 18
-8parallel-7 => => DefaultSimpleSubscriber Received : 19
-8parallel-8 => => DefaultSimpleSubscriber Received : 20
-8parallel-9 => => DefaultSimpleSubscriber Received : 21
-9parallel-10 => => DefaultSimpleSubscriber Received : 22
-9parallel-11 => => DefaultSimpleSubscriber Received : 23
-F09:46:13.040 [parallel-11] INFO reactor.Flux.Range.1 - | request(24)
-E09:46:13.041 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(33)
-E09:46:13.041 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(34)
-E09:46:13.041 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(35)
-E09:46:13.041 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(36)
-E09:46:13.042 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(37)
-E09:46:13.042 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(38)
-E09:46:13.042 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(39)
-E09:46:13.042 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(40)
-E09:46:13.043 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(41)
-E09:46:13.043 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(42)
-E09:46:13.043 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(43)
-E09:46:13.044 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(44)
-E09:46:13.044 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(45)
-E09:46:13.044 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(46)
-E09:46:13.044 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(47)
-E09:46:13.045 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(48)
-E09:46:13.045 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(49)
-E09:46:13.045 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(50)
-E09:46:13.045 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(51)
-E09:46:13.045 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(52)
-E09:46:13.046 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(53)
-E09:46:13.046 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(54)
-E09:46:13.046 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(55)
-E09:46:13.046 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(56)
-9parallel-12 => => DefaultSimpleSubscriber Received : 24
-8parallel-1 => => DefaultSimpleSubscriber Received : 25
-8parallel-2 => => DefaultSimpleSubscriber Received : 26
-8parallel-3 => => DefaultSimpleSubscriber Received : 27
-8parallel-4 => => DefaultSimpleSubscriber Received : 28
-8parallel-5 => => DefaultSimpleSubscriber Received : 29
-8parallel-6 => => DefaultSimpleSubscriber Received : 30
-8parallel-7 => => DefaultSimpleSubscriber Received : 31
-8parallel-8 => => DefaultSimpleSubscriber Received : 32
-8parallel-9 => => DefaultSimpleSubscriber Received : 33
-9parallel-10 => => DefaultSimpleSubscriber Received : 34
-9parallel-11 => => DefaultSimpleSubscriber Received : 35
-9parallel-12 => => DefaultSimpleSubscriber Received : 36
-8parallel-1 => => DefaultSimpleSubscriber Received : 37
-8parallel-2 => => DefaultSimpleSubscriber Received : 38
-8parallel-3 => => DefaultSimpleSubscriber Received : 39
-8parallel-4 => => DefaultSimpleSubscriber Received : 40
-8parallel-5 => => DefaultSimpleSubscriber Received : 41
-8parallel-6 => => DefaultSimpleSubscriber Received : 42
-8parallel-7 => => DefaultSimpleSubscriber Received : 43
-8parallel-8 => => DefaultSimpleSubscriber Received : 44
-8parallel-9 => => DefaultSimpleSubscriber Received : 45
-9parallel-10 => => DefaultSimpleSubscriber Received : 46
-9parallel-11 => => DefaultSimpleSubscriber Received : 47
-F09:46:14.581 [parallel-11] INFO reactor.Flux.Range.1 - | request(24)
-E09:46:14.581 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(57)
-E09:46:14.581 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(58)
-E09:46:14.582 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(59)
-E09:46:14.582 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(60)
-E09:46:14.583 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(61)
-E09:46:14.583 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(62)
-E09:46:14.583 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(63)
-E09:46:14.583 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(64)
-E09:46:14.583 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(65)
-E09:46:14.584 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(66)
-E09:46:14.584 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(67)
-E09:46:14.584 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(68)
-E09:46:14.586 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(69)
-E09:46:14.586 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(70)
-E09:46:14.586 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(71)
-E09:46:14.587 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(72)
-E09:46:14.587 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(73)
-E09:46:14.587 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(74)
-E09:46:14.588 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(75)
-E09:46:14.588 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(76)
-E09:46:14.588 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(77)
-E09:46:14.588 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(78)
-E09:46:14.589 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(79)
-E09:46:14.589 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(80)
-9parallel-12 => => DefaultSimpleSubscriber Received : 48
-8parallel-1 => => DefaultSimpleSubscriber Received : 49
-8parallel-2 => => DefaultSimpleSubscriber Received : 50
-8parallel-3 => => DefaultSimpleSubscriber Received : 51
-8parallel-4 => => DefaultSimpleSubscriber Received : 52
-8parallel-5 => => DefaultSimpleSubscriber Received : 53
-8parallel-6 => => DefaultSimpleSubscriber Received : 54
-8parallel-7 => => DefaultSimpleSubscriber Received : 55
-8parallel-8 => => DefaultSimpleSubscriber Received : 56
-8parallel-9 => => DefaultSimpleSubscriber Received : 57
-9parallel-10 => => DefaultSimpleSubscriber Received : 58
-9parallel-11 => => DefaultSimpleSubscriber Received : 59
-9parallel-12 => => DefaultSimpleSubscriber Received : 60
-8parallel-1 => => DefaultSimpleSubscriber Received : 61
-8parallel-2 => => DefaultSimpleSubscriber Received : 62
-8parallel-3 => => DefaultSimpleSubscriber Received : 63
-8parallel-4 => => DefaultSimpleSubscriber Received : 64
-8parallel-5 => => DefaultSimpleSubscriber Received : 65
-8parallel-6 => => DefaultSimpleSubscriber Received : 66
-8parallel-7 => => DefaultSimpleSubscriber Received : 67
-8parallel-8 => => DefaultSimpleSubscriber Received : 68
-8parallel-9 => => DefaultSimpleSubscriber Received : 69
-9parallel-10 => => DefaultSimpleSubscriber Received : 70
-9parallel-11 => => DefaultSimpleSubscriber Received : 71
-F09:46:16.100 [parallel-11] INFO reactor.Flux.Range.1 - | request(24)
-E09:46:16.100 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(81)
-E09:46:16.100 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(82)
-E09:46:16.100 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(83)
-E09:46:16.101 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(84)
-E09:46:16.101 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(85)
-E09:46:16.101 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(86)
-E09:46:16.101 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(87)
-E09:46:16.101 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(88)
-E09:46:16.102 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(89)
-E09:46:16.102 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(90)
-E09:46:16.102 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(91)
-E09:46:16.102 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(92)
-E09:46:16.102 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(93)
-E09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(94)
-E09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(95)
-E09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(96)
-E09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(97)
-E09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(98)
-E09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(99)
-F09:46:16.103 [parallel-11] INFO reactor.Flux.Range.1 - | onNext(100)
-G09:46:16.104 [parallel-11] INFO reactor.Flux.Range.1 - | onComplete()
-9parallel-12 => => DefaultSimpleSubscriber Received : 72
-8parallel-1 => => DefaultSimpleSubscriber Received : 73
-8parallel-2 => => DefaultSimpleSubscriber Received : 74
-8parallel-3 => => DefaultSimpleSubscriber Received : 75
-8parallel-4 => => DefaultSimpleSubscriber Received : 76
-8parallel-5 => => DefaultSimpleSubscriber Received : 77
-8parallel-6 => => DefaultSimpleSubscriber Received : 78
-8parallel-7 => => DefaultSimpleSubscriber Received : 79
-8parallel-8 => => DefaultSimpleSubscriber Received : 80
-8parallel-9 => => DefaultSimpleSubscriber Received : 81
-9parallel-10 => => DefaultSimpleSubscriber Received : 82
-9parallel-11 => => DefaultSimpleSubscriber Received : 83
-9parallel-12 => => DefaultSimpleSubscriber Received : 84
-8parallel-1 => => DefaultSimpleSubscriber Received : 85
-8parallel-2 => => DefaultSimpleSubscriber Received : 86
-8parallel-3 => => DefaultSimpleSubscriber Received : 87
-8parallel-4 => => DefaultSimpleSubscriber Received : 88
-8parallel-5 => => DefaultSimpleSubscriber Received : 89
-8parallel-6 => => DefaultSimpleSubscriber Received : 90
-8parallel-7 => => DefaultSimpleSubscriber Received : 91
-8parallel-8 => => DefaultSimpleSubscriber Received : 92
-8parallel-9 => => DefaultSimpleSubscriber Received : 93
-9parallel-10 => => DefaultSimpleSubscriber Received : 94
-9parallel-11 => => DefaultSimpleSubscriber Received : 95
-F09:46:17.565 [parallel-11] INFO reactor.Flux.Range.1 - | request(24)
-9parallel-12 => => DefaultSimpleSubscriber Received : 96
-8parallel-1 => => DefaultSimpleSubscriber Received : 97
-8parallel-2 => => DefaultSimpleSubscriber Received : 98
-8parallel-3 => => DefaultSimpleSubscriber Received : 99
-9parallel-4 => => DefaultSimpleSubscriber Received : 100
-4parallel-4 => => DefaultSimpleSubscriber Completed
