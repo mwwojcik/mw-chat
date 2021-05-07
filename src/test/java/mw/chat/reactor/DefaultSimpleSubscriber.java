@@ -26,16 +26,16 @@ public class DefaultSimpleSubscriber implements Subscriber<Object> {
 
     @Override
     public void onNext(Object o) {
-        System.out.println(String.format("%s Received : %s",name,o));
+        System.out.println(String.format("%s => %s Received : %s",Thread.currentThread().getName(),name,o));
     }
 
     @Override
     public void onError(Throwable t) {
-        System.out.println(String.format("%s Error : %s",name, t));
+        System.out.println(String.format("%s => %s Error : %s",Thread.currentThread().getName(),name, t));
     }
 
     @Override
     public void onComplete() {
-        System.out.println(String.format("%s Completed", name));
+        System.out.println(String.format("%s => %s Completed",Thread.currentThread().getName(), name));
     }
 }

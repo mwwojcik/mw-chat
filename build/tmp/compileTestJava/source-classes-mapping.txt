@@ -10,11 +10,15 @@ mw/chat/web/MessagesTopicHandlerTest.java
  mw.chat.web.MessagesTopicHandlerTest
 mw/chat/reactor/ReactorFluxGenerateAndCreateComparisonTest.java
  mw.chat.reactor.ReactorFluxGenerateAndCreateComparisonTest
+mw/chat/reactor/operators/HandleOperatorTest.java
+ mw.chat.reactor.operators.HandleOperatorTest
 mw/chat/reactor/DefaultSimpleSubscriber.java
  mw.chat.reactor.DefaultSimpleSubscriber
 mw/chat/reactor/ReactorFluxCreateTests.java
  mw.chat.reactor.ReactorFluxCreateTests
 mw/chat/reactor/fileservice/FluxFileReaderTest.java
  mw.chat.reactor.fileservice.FluxFileReaderTest
-mw/chat/reactor/operators/ReactiveOperatorsTest.java
- mw.chat.reactor.operators.ReactiveOperatorsTest
+mw/chat/reactor/operators/LimitRateOperatorTest.java
+ mw.chat.reactor.operators.LimitRateOperatorTest
+mw/chat/reactor/operators/DelayElementsOperatorTest.java
+ mw.chat.reactor.operators.DelayElementsOperatorTest
