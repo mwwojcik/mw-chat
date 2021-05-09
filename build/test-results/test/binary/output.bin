@@ -1,12 +1,20 @@
-W09:00:55.680 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-:Test worker => => DefaultSimpleSubscriber Received : 170
-:Test worker => => DefaultSimpleSubscriber Received : 150
-:Test worker => => DefaultSimpleSubscriber Received : 127
-:Test worker => => DefaultSimpleSubscriber Received : 147
-:Test worker => => DefaultSimpleSubscriber Received : 180
-:Test worker => => DefaultSimpleSubscriber Received : 189
-:Test worker => => DefaultSimpleSubscriber Received : 185
-:Test worker => => DefaultSimpleSubscriber Received : 156
-:Test worker => => DefaultSimpleSubscriber Received : 180
-:Test worker => => DefaultSimpleSubscriber Received : 105
+W15:13:52.903 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+ATest worker => => DefaultSimpleSubscriber Received : STACEY=>13
+@Test worker => => DefaultSimpleSubscriber Received : DEVIN=>17
+ATest worker => => DefaultSimpleSubscriber Received : GIANNA=>28
+@Test worker => => DefaultSimpleSubscriber Received : VELIA=>16
+@Test worker => => DefaultSimpleSubscriber Received : JESSE=>22
+@Test worker => => DefaultSimpleSubscriber Received : BLAIR=>16
+BTest worker => => DefaultSimpleSubscriber Received : PAULITA=>23
+@Test worker => => DefaultSimpleSubscriber Received : ARRON=>22
+ATest worker => => DefaultSimpleSubscriber Received : TAMARA=>12
+?Test worker => => DefaultSimpleSubscriber Received : DEON=>25
+@Test worker => => DefaultSimpleSubscriber Received : LOURA=>24
+BTest worker => => DefaultSimpleSubscriber Received : MERRILL=>27
+CTest worker => => DefaultSimpleSubscriber Received : NATHALIE=>15
+>Test worker => => DefaultSimpleSubscriber Received : KEN=>29
+?Test worker => => DefaultSimpleSubscriber Received : JUDE=>15
+?Test worker => => DefaultSimpleSubscriber Received : BIBI=>13
+@Test worker => => DefaultSimpleSubscriber Received : FRITZ=>17
+@Test worker => => DefaultSimpleSubscriber Received : SAMMY=>17
 5Test worker => => DefaultSimpleSubscriber Completed
