@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.operators.SwitchIfEmpty" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-09T07:00:55" hostname="APS00087715-MB" time="0.114">
+  <properties/>
+  <testcase name="Should emit signals from alternative signal source when main stream is empty" classname="mw.chat.reactor.operators.SwitchIfEmpty" time="0.114"/>
+  <system-out><![CDATA[09:00:55.680 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+Test worker => => DefaultSimpleSubscriber Received : 170
+Test worker => => DefaultSimpleSubscriber Received : 150
+Test worker => => DefaultSimpleSubscriber Received : 127
+Test worker => => DefaultSimpleSubscriber Received : 147
+Test worker => => DefaultSimpleSubscriber Received : 180
+Test worker => => DefaultSimpleSubscriber Received : 189
+Test worker => => DefaultSimpleSubscriber Received : 185
+Test worker => => DefaultSimpleSubscriber Received : 156
+Test worker => => DefaultSimpleSubscriber Received : 180
+Test worker => => DefaultSimpleSubscriber Received : 105
+Test worker => => DefaultSimpleSubscriber Completed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

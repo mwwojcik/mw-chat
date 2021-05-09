@@ -1,3 +1,12 @@
-W08:42:27.679 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-;Test worker => => DefaultSimpleSubscriber Received : -100
+W09:00:55.680 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+:Test worker => => DefaultSimpleSubscriber Received : 170
+:Test worker => => DefaultSimpleSubscriber Received : 150
+:Test worker => => DefaultSimpleSubscriber Received : 127
+:Test worker => => DefaultSimpleSubscriber Received : 147
+:Test worker => => DefaultSimpleSubscriber Received : 180
+:Test worker => => DefaultSimpleSubscriber Received : 189
+:Test worker => => DefaultSimpleSubscriber Received : 185
+:Test worker => => DefaultSimpleSubscriber Received : 156
+:Test worker => => DefaultSimpleSubscriber Received : 180
+:Test worker => => DefaultSimpleSubscriber Received : 105
 5Test worker => => DefaultSimpleSubscriber Completed

@@ -30,3 +30,5 @@ mw/chat/reactor/operators/TimeoutOperatorTest.java
  mw.chat.reactor.operators.TimeoutOperatorTest
 mw/chat/reactor/operators/IfEmptyOperatorTest.java
  mw.chat.reactor.operators.IfEmptyOperatorTest
+mw/chat/reactor/operators/SwitchIfEmpty.java
+ mw.chat.reactor.operators.SwitchIfEmpty
