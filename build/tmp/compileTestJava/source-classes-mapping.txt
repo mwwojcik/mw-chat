@@ -28,3 +28,5 @@ mw/chat/reactor/Sleeper.java
  mw.chat.reactor.Sleeper
 mw/chat/reactor/operators/TimeoutOperatorTest.java
  mw.chat.reactor.operators.TimeoutOperatorTest
+mw/chat/reactor/operators/IfEmptyOperatorTest.java
+ mw.chat.reactor.operators.IfEmptyOperatorTest

@@ -1,17 +1,3 @@
-W08:22:59.261 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-7parallel-3 => => DefaultSimpleSubscriber Received : 1
-7parallel-4 => => DefaultSimpleSubscriber Received : 2
-7parallel-5 => => DefaultSimpleSubscriber Received : 3
-7parallel-6 => => DefaultSimpleSubscriber Received : 4
-7parallel-7 => => DefaultSimpleSubscriber Received : 5
-7parallel-8 => => DefaultSimpleSubscriber Received : 6
-7parallel-9 => => DefaultSimpleSubscriber Received : 7
-8parallel-10 => => DefaultSimpleSubscriber Received : 8
-8parallel-11 => => DefaultSimpleSubscriber Received : 9
-9parallel-12 => => DefaultSimpleSubscriber Received : 10
-8parallel-1 => => DefaultSimpleSubscriber Received : 11
-8parallel-2 => => DefaultSimpleSubscriber Received : 12
-8parallel-3 => => DefaultSimpleSubscriber Received : 13
-8parallel-4 => => DefaultSimpleSubscriber Received : 14
-8parallel-5 => => DefaultSimpleSubscriber Received : 15
-4parallel-5 => => DefaultSimpleSubscriber Completed
+W08:42:27.679 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+;Test worker => => DefaultSimpleSubscriber Received : -100
+5Test worker => => DefaultSimpleSubscriber Completed
