@@ -24,3 +24,7 @@ mw/chat/reactor/fileservice/FluxFileReader.java
  mw.chat.reactor.fileservice.FluxFileReader
 mw/chat/reactor/ReactorFluxCreateTests.java
  mw.chat.reactor.ReactorFluxCreateTests
+mw/chat/reactor/Sleeper.java
+ mw.chat.reactor.Sleeper
+mw/chat/reactor/operators/TimeoutOperatorTest.java
+ mw.chat.reactor.operators.TimeoutOperatorTest
