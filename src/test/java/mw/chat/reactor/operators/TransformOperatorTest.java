@@ -26,7 +26,11 @@ public class TransformOperatorTest {
 
     private Function<Flux<Person>,Flux<Person>> applyTransformOnlyForSomePersons(){
         return flux ->
-            flux.filter(it->it.getAge()>10).doOnNext(it->it.setName(it.getName().toUpperCase()));
+            flux.filter(it->it.getAge()>10).doOnNext(it->it.setName(it.getName().toUpperCase())).doOnDiscard(Person.class,
+                                                                                                             p-> System.out.println(
+                                                                                                                 String.format(
+                                                                                                                     "Discarded"
+                                                                                                                         + "=>%s", p)));
     }
 
     private Flux<Person> persons(){

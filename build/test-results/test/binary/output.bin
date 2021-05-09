@@ -1,20 +1,22 @@
-W15:13:52.903 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-ATest worker => => DefaultSimpleSubscriber Received : STACEY=>13
-@Test worker => => DefaultSimpleSubscriber Received : DEVIN=>17
-ATest worker => => DefaultSimpleSubscriber Received : GIANNA=>28
-@Test worker => => DefaultSimpleSubscriber Received : VELIA=>16
-@Test worker => => DefaultSimpleSubscriber Received : JESSE=>22
-@Test worker => => DefaultSimpleSubscriber Received : BLAIR=>16
-BTest worker => => DefaultSimpleSubscriber Received : PAULITA=>23
-@Test worker => => DefaultSimpleSubscriber Received : ARRON=>22
-ATest worker => => DefaultSimpleSubscriber Received : TAMARA=>12
-?Test worker => => DefaultSimpleSubscriber Received : DEON=>25
-@Test worker => => DefaultSimpleSubscriber Received : LOURA=>24
-BTest worker => => DefaultSimpleSubscriber Received : MERRILL=>27
-CTest worker => => DefaultSimpleSubscriber Received : NATHALIE=>15
->Test worker => => DefaultSimpleSubscriber Received : KEN=>29
-?Test worker => => DefaultSimpleSubscriber Received : JUDE=>15
-?Test worker => => DefaultSimpleSubscriber Received : BIBI=>13
-@Test worker => => DefaultSimpleSubscriber Received : FRITZ=>17
-@Test worker => => DefaultSimpleSubscriber Received : SAMMY=>17
+W15:18:52.573 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+ATest worker => => DefaultSimpleSubscriber Received : DORSEY=>19
+BTest worker => => DefaultSimpleSubscriber Received : BENNETT=>16
+CTest worker => => DefaultSimpleSubscriber Received : GARFIELD=>13
+Discarded=>Demarcus=>3
+BTest worker => => DefaultSimpleSubscriber Received : ANTOINE=>17
+Discarded=>Tony=>4
+CTest worker => => DefaultSimpleSubscriber Received : BRIGETTE=>30
+BTest worker => => DefaultSimpleSubscriber Received : GERALDO=>27
+ATest worker => => DefaultSimpleSubscriber Received : VICTOR=>29
+ATest worker => => DefaultSimpleSubscriber Received : FARRAH=>30
+BTest worker => => DefaultSimpleSubscriber Received : EMELINA=>19
+ATest worker => => DefaultSimpleSubscriber Received : DEETTA=>21
+Discarded=>Lorean=>8
+?Test worker => => DefaultSimpleSubscriber Received : GLEN=>27
+BTest worker => => DefaultSimpleSubscriber Received : MILISSA=>14
+Discarded=>Jermaine=>10
+BTest worker => => DefaultSimpleSubscriber Received : HERSHEL=>30
+Discarded=>Leslie=>10
+@Test worker => => DefaultSimpleSubscriber Received : MAURO=>25
+ATest worker => => DefaultSimpleSubscriber Received : MORTON=>23
 5Test worker => => DefaultSimpleSubscriber Completed
