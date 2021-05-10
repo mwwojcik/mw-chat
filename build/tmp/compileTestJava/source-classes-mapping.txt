@@ -2,6 +2,8 @@ mw/chat/reactor/ReactorFluxGenerateAndCreateComparisonTest.java
  mw.chat.reactor.ReactorFluxGenerateAndCreateComparisonTest
 mw/chat/reactor/operators/HandleOperatorTest.java
  mw.chat.reactor.operators.HandleOperatorTest
+mw/chat/reactor/ReactorFluxCreateTests.java
+ mw.chat.reactor.ReactorFluxCreateTests
 mw/chat/reactor/operators/DelayElementsOperatorTest.java
  mw.chat.reactor.operators.DelayElementsOperatorTest
 mw/chat/reactor/fileservice/FluxFileReaderTest.java
@@ -22,8 +24,9 @@ mw/chat/ChatApplicationTests.java
  mw.chat.ChatApplicationTests
 mw/chat/reactor/DefaultSimpleSubscriber.java
  mw.chat.reactor.DefaultSimpleSubscriber
-mw/chat/reactor/ReactorFluxCreateTests.java
- mw.chat.reactor.ReactorFluxCreateTests
+mw/chat/reactor/operators/TransformOperatorTest.java
+ mw.chat.reactor.operators.Person
+ mw.chat.reactor.operators.TransformOperatorTest
 mw/chat/reactor/operators/OnErrorOperatorTest.java
  mw.chat.reactor.operators.OnErrorOperatorTest
 mw/chat/reactor/fileservice/FluxBufferedFileReader.java
@@ -32,6 +35,9 @@ mw/chat/reactor/fileservice/FluxFileReader.java
  mw.chat.reactor.fileservice.FluxFileReader
 mw/chat/reactor/Sleeper.java
  mw.chat.reactor.Sleeper
-mw/chat/reactor/operators/TransformOperatorTest.java
- mw.chat.reactor.operators.Person
- mw.chat.reactor.operators.TransformOperatorTest
+mw/chat/reactor/operators/FlatMapOperatorTest.java
+ mw.chat.reactor.operators.FlatMapOperatorTest
+ mw.chat.reactor.operators.OrderService
+ mw.chat.reactor.operators.PurchaseOrder
+ mw.chat.reactor.operators.User
+ mw.chat.reactor.operators.UserService

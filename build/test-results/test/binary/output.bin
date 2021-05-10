@@ -1,22 +1,8 @@
-W15:18:52.573 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-ATest worker => => DefaultSimpleSubscriber Received : DORSEY=>19
-BTest worker => => DefaultSimpleSubscriber Received : BENNETT=>16
-CTest worker => => DefaultSimpleSubscriber Received : GARFIELD=>13
-Discarded=>Demarcus=>3
-BTest worker => => DefaultSimpleSubscriber Received : ANTOINE=>17
-Discarded=>Tony=>4
-CTest worker => => DefaultSimpleSubscriber Received : BRIGETTE=>30
-BTest worker => => DefaultSimpleSubscriber Received : GERALDO=>27
-ATest worker => => DefaultSimpleSubscriber Received : VICTOR=>29
-ATest worker => => DefaultSimpleSubscriber Received : FARRAH=>30
-BTest worker => => DefaultSimpleSubscriber Received : EMELINA=>19
-ATest worker => => DefaultSimpleSubscriber Received : DEETTA=>21
-Discarded=>Lorean=>8
-?Test worker => => DefaultSimpleSubscriber Received : GLEN=>27
-BTest worker => => DefaultSimpleSubscriber Received : MILISSA=>14
-Discarded=>Jermaine=>10
-BTest worker => => DefaultSimpleSubscriber Received : HERSHEL=>30
-Discarded=>Leslie=>10
-@Test worker => => DefaultSimpleSubscriber Received : MAURO=>25
-ATest worker => => DefaultSimpleSubscriber Received : MORTON=>23
+W09:47:09.219 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@61310580
+gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@18b50832
+gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@1c4c50b3
+gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@1e40e491
+fTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@edf6d37
+gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@37bf442e
 5Test worker => => DefaultSimpleSubscriber Completed
