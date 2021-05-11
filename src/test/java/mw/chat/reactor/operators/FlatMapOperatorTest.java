@@ -5,10 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import lombok.Data;
+import lombok.Getter;
 import lombok.ToString;
 import mw.chat.reactor.DefaultSimpleSubscriber;
-import org.assertj.core.api.Fail;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
@@ -18,13 +17,14 @@ public class FlatMapOperatorTest {
     @DisplayName("Should get users and theirs orders")
     @Test
     void shouldGetUsersAndTheirsOrders() {
-    UserService.getUsers().flatMap(user->OrderService.getOrders(user.getId())).subscribe(DefaultSimpleSubscriber.create());
-     }
+        UserService.getUsers().flatMap(user -> OrderService.getOrders(user.getId())).subscribe(DefaultSimpleSubscriber.create());
+    }
 
 
 }
 
-
+@Getter
+@ToString
 class User {
 
     private String name;
@@ -35,16 +35,10 @@ class User {
         this.name = new Faker().name().fullName();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getId() {
-        return id;
-    }
 }
 
-
+@Getter
+@ToString
 class PurchaseOrder {
 
     private String item;
@@ -58,17 +52,6 @@ class PurchaseOrder {
         this.price = faker.commerce().price();
     }
 
-    public String getItem() {
-        return item;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public String getPrice() {
-        return price;
-    }
 }
 
 class OrderService {

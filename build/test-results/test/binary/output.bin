@@ -1,8 +1,8 @@
-W09:47:09.219 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@61310580
-gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@18b50832
-gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@1c4c50b3
-gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@1e40e491
-fTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@edf6d37
-gTest worker => => DefaultSimpleSubscriber Received : mw.chat.reactor.operators.PurchaseOrder@37bf442e
+W21:36:57.057 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+yTest worker => => DefaultSimpleSubscriber Received : PurchaseOrder(item=Ergonomic Cotton Wallet, userId=1, price=85,39)
+uTest worker => => DefaultSimpleSubscriber Received : PurchaseOrder(item=Rustic Cotton Shoes, userId=1, price=81,92)
+zTest worker => => DefaultSimpleSubscriber Received : PurchaseOrder(item=Awesome Plastic Keyboard, userId=1, price=10,79)
+yTest worker => => DefaultSimpleSubscriber Received : PurchaseOrder(item=Awesome Wooden Computer, userId=2, price=24,39)
+xTest worker => => DefaultSimpleSubscriber Received : PurchaseOrder(item=Practical Paper Wallet, userId=2, price=82,21)
+rTest worker => => DefaultSimpleSubscriber Received : PurchaseOrder(item=Sleek Wooden Car, userId=2, price=20,56)
 5Test worker => => DefaultSimpleSubscriber Completed
