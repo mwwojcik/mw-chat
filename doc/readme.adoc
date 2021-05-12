@@ -7,9 +7,13 @@
 image::img/flux-basic-terminology.png[]
 
 image::img/flux-basic-step1.png[]
+
 image::img/flux-basic-step2.png[]
+
 image::img/flux-basic-step3.png[]
+
 image::img/flux-basic-step4.png[]
+
 image::img/flux-basic-step5.png[]
 
 
