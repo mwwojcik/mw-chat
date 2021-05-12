@@ -1,18 +1,13 @@
-W20:55:45.314 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+W22:10:09.199 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
 )parallel-1 => => Sam Received : Scene 1
 )parallel-2 => => Sam Received : Scene 2
 )parallel-3 => => Sam Received : Scene 3
 )parallel-4 => => Sam Received : Scene 4
 )parallel-5 => => Sam Received : Scene 5
+*parallel-5 => => Mike Received : Scene 5
 )parallel-6 => => Sam Received : Scene 6
+*parallel-6 => => Mike Received : Scene 6
 )parallel-7 => => Sam Received : Scene 7
+*parallel-7 => => Mike Received : Scene 7
  parallel-7 => => Sam Completed
-Mike is about to join 
-+Test worker => => Mike Received : Scene 1
-+Test worker => => Mike Received : Scene 2
-+Test worker => => Mike Received : Scene 3
-+Test worker => => Mike Received : Scene 4
-+Test worker => => Mike Received : Scene 5
-+Test worker => => Mike Received : Scene 6
-+Test worker => => Mike Received : Scene 7
-"Test worker => => Mike Completed
+!parallel-7 => => Mike Completed

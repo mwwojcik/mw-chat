@@ -2,6 +2,7 @@
 :toc:
 :icons: font
 :url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
 == Spring Reactor
 
 image::img/flux-basic-terminology.png[]
@@ -17,7 +18,7 @@ image::img/flux-basic-step4.png[]
 image::img/flux-basic-step5.png[]
 
 
-==  Flux - Emitting Items Programmatically
+== Flux - Emitting Items Programmatically
 
 image::img/flux-create-generate.png[]
 
@@ -25,7 +26,9 @@ https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/re
 
 https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/reactor/ReactorFluxCreateTests.java[See: ReactorFluxCreateTests.java]
 
-== Cold and Hot publishers
+https://github.com/mwwojcik/mw-chat/tree/main/src/test/java/mw/chat/reactor/fileservice[See: Reactive text file content]
+
+== Cold and Hot Publishers
 
 https://www.vinsguru.com/reactor-hot-publisher-vs-cold-publisher/
 
