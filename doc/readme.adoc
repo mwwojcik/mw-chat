@@ -22,11 +22,11 @@ image::img/flux-basic-step5.png[]
 
 image::img/flux-create-generate.png[]
 
-https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/reactor/ReactorFluxGenerateAndCreateComparisonTest.java[See: ReactorFluxGenerateAndCreateComparisonTest.java]
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/ReactorFluxGenerateAndCreateComparisonTest.java[See: ReactorFluxGenerateAndCreateComparisonTest.java]
 
-https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/reactor/ReactorFluxCreateTests.java[See: ReactorFluxCreateTests.java]
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/ReactorFluxCreateTests.java[See: ReactorFluxCreateTests.java]
 
-https://github.com/mwwojcik/mw-chat/tree/main/src/test/java/mw/chat/reactor/fileservice[See: Reactive text file content]
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/fileservice[See: Reactive text file content]
 
 == Cold and Hot Publishers
 
@@ -37,7 +37,7 @@ https://www.vinsguru.com/reactor-hot-publisher-vs-cold-publisher/
 Publishers by default do not produce any value unless at least 1 observer subscribes to it. Publishers create new data producers for each new subscription.
 ----
 
-https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/reactor/coldhot/ColdPublisherTest.java[See: ColdPublisherTest.java]
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/coldhot/ColdPublisherTest.java[See: ColdPublisherTest.java]
 
 *Hot Publisher* (TV,Radio)
 
@@ -45,7 +45,7 @@ https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/re
 Hot Publishers do not create new data producer for each new subscription (as the Cold Publisher does). Instead there will be only one data producer and all the observers listen to the data produced by the single data producer. So all the observers get the same data.
 ----
 
-https://raw.githubusercontent.com/mwwojcik/mw-chat/main/src/test/java/mw/chat/reactor/coldhot/HotPublisherTest.java[See: HotPublisherTest.java]
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/coldhot/HotPublisherTest.java[See: HotPublisherTest.java]
 
 .Image caption
 image::img/hot-publisher.png[Hot and Cold Publishers - Summary]
