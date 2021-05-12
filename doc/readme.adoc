@@ -1,0 +1,27 @@
+= Spring Reactor
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+
+== Cold and hot publishers
+
+https://www.vinsguru.com/reactor-hot-publisher-vs-cold-publisher/
+
+*Cold Publisher* (Netflix)
+----
+Publishers by default do not produce any value unless at least 1 observer subscribes to it. Publishers create new data producers for each new subscription.
+----
+
+*Hot Publisher* (TV,Radio)
+
+----
+Hot Publishers do not create new data producer for each new subscription (as the Cold Publisher does). Instead there will be only one data producer and all the observers listen to the data produced by the single data producer. So all the observers get the same data.
+----
+
+
+
+.Image caption
+image::img/hot-publisher.png[Hot and Cold Publishers - Summary]
+
+

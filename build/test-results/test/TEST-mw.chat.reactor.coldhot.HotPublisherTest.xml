@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.coldhot.HotPublisherTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-12T18:05:06" hostname="APS00087715-MB" time="43.193">
+  <properties/>
+  <testcase name="Should emit signals without connecting any subscribers" classname="mw.chat.reactor.coldhot.HotPublisherTest" time="43.193"/>
+  <system-out><![CDATA[20:05:06.546 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+parallel-3 => => Sam Received : Scene 3
+parallel-4 => => Sam Received : Scene 4
+parallel-5 => => Sam Received : Scene 5
+parallel-6 => => Sam Received : Scene 6
+parallel-7 => => Sam Received : Scene 7
+parallel-7 => => Sam Completed
+Mike is about to join 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

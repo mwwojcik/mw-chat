@@ -19,6 +19,10 @@ public class DefaultSimpleSubscriber implements Subscriber<Object> {
        return new DefaultSimpleSubscriber(DefaultSimpleSubscriber.class.getSimpleName());
     }
 
+    public static DefaultSimpleSubscriber create(String name) {
+       return new DefaultSimpleSubscriber(name);
+    }
+
     @Override
     public void onSubscribe(Subscription s) {
         s.request(Long.MAX_VALUE);
