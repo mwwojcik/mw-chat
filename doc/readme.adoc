@@ -99,7 +99,10 @@ image::img/hot-publisher.png[Hot and Cold Publishers - Summary,width=80%]
 image::img/flux-scheduler-basic-thread.png[widht="80%"]
 
 By default, all operations in single pipeline are executed in default Thread.
-[source,java]
+
+All steps block current thread!
+
+[source]
 ----
   @DisplayName("Should execute all pipeline tasks in the same thread")
     @Test
@@ -120,7 +123,7 @@ By default, all operations in single pipeline are executed in default Thread.
 
 In general, by default,  all steps of the process are performed in subscriber thread.
 
-[source,java]
+[source]
 ----
  @DisplayName("Should execute all pipeline tasks in subscriber thread")
     @Test
@@ -151,3 +154,11 @@ In general, by default,  all steps of the process are performed in subscriber th
 ----
 
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/threading/DefaultThreadingTest.java[See: DefaultThreadingTest.java]
+
+=== Schedulers and pools
+
+image::img/flux-schedulers-pools.png[widht=80%]
+
+image::img/flux-schedulers-operators.png[widht=80%]
+
+image::img/flux-schedulers-switchOn.png[widht=80%]
