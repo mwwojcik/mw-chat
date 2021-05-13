@@ -1,13 +1,7 @@
-W22:10:09.199 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-)parallel-1 => => Sam Received : Scene 1
-)parallel-2 => => Sam Received : Scene 2
-)parallel-3 => => Sam Received : Scene 3
-)parallel-4 => => Sam Received : Scene 4
-)parallel-5 => => Sam Received : Scene 5
-*parallel-5 => => Mike Received : Scene 5
-)parallel-6 => => Sam Received : Scene 6
-*parallel-6 => => Mike Received : Scene 6
-)parallel-7 => => Sam Received : Scene 7
-*parallel-7 => => Mike Received : Scene 7
- parallel-7 => => Sam Completed
-!parallel-7 => => Mike Completed
+W22:49:29.091 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+`22:49:29.103 [Thread-3] INFO mw.chat.reactor.threading.DefaultThreadingTest - Thread-3=>create
+^22:49:29.104 [Thread-3] INFO mw.chat.reactor.threading.DefaultThreadingTest - Thread-3=>next
+c22:49:29.104 [Thread-3] INFO mw.chat.reactor.threading.DefaultThreadingTest - Thread-3=>subscribe
+`22:49:30.099 [Thread-4] INFO mw.chat.reactor.threading.DefaultThreadingTest - Thread-4=>create
+^22:49:30.099 [Thread-4] INFO mw.chat.reactor.threading.DefaultThreadingTest - Thread-4=>next
+c22:49:30.099 [Thread-4] INFO mw.chat.reactor.threading.DefaultThreadingTest - Thread-4=>subscribe

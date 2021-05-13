@@ -45,3 +45,5 @@ mw/chat/reactor/Sleeper.java
  mw.chat.reactor.Sleeper
 mw/chat/reactor/ReactorFluxCreateTests.java
  mw.chat.reactor.ReactorFluxCreateTests
+mw/chat/reactor/threading/DefaultThreadingTest.java
+ mw.chat.reactor.threading.DefaultThreadingTest

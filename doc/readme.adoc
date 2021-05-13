@@ -99,3 +99,55 @@ image::img/hot-publisher.png[Hot and Cold Publishers - Summary,width=80%]
 image::img/flux-scheduler-basic-thread.png[widht="80%"]
 
 By default, all operations in single pipeline are executed in default Thread.
+[source,java]
+----
+  @DisplayName("Should execute all pipeline tasks in the same thread")
+    @Test
+    void shouldExecuteAllPipelineTasksInTheSameThread() {
+        Flux flux = Flux.create(fluxSink -> {
+            printThreadMessage("create");
+            fluxSink.next(1);
+        }).doOnNext(i->printThreadMessage("next"));
+        flux.subscribe(i->printThreadMessage("Subscribe"));
+    }
+----
+
+----
+22:46:57.972 [Test worker] DefaultThreadingTest - Test worker=>create
+22:46:57.972 [Test worker] DefaultThreadingTest - Test worker=>next
+22:46:57.973 [Test worker] DefaultThreadingTest - Test worker=>Subscribe
+----
+
+In general, by default,  all steps of the process are performed in subscriber thread.
+
+[source,java]
+----
+ @DisplayName("Should execute all pipeline tasks in subscriber thread")
+    @Test
+    void shouldExecuteAllPipelineTasksInSubscriberThread() {
+        Flux flux = Flux.create(fluxSink -> {
+            printThreadMessage("create");
+            fluxSink.next(1);
+        }).doOnNext(i->printThreadMessage("next"));
+
+        Runnable r=()->flux.subscribe(i->printThreadMessage("subscribe"));
+
+        for (int i = 0; i < 2; i++) {
+            new Thread(r).start();
+            Sleeper.sleepSecconds(1);
+        }
+        Sleeper.sleepSecconds(5);
+     }
+----
+
+----
+22:49:29.103 [Thread-3] DefaultThreadingTest - Thread-3=>create
+22:49:29.104 [Thread-3] DefaultThreadingTest - Thread-3=>next
+22:49:29.104 [Thread-3] DefaultThreadingTest - Thread-3=>subscribe
+
+22:49:30.099 [Thread-4] DefaultThreadingTest - Thread-4=>create
+22:49:30.099 [Thread-4] DefaultThreadingTest - Thread-4=>next
+22:49:30.099 [Thread-4] DefaultThreadingTest - Thread-4=>subscribe
+----
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/threading/DefaultThreadingTest.java[See: DefaultThreadingTest.java]
