@@ -5,22 +5,22 @@
 
 == Spring Reactor
 
-image::img/flux-basic-terminology.png[]
+image::img/flux-basic-terminology.png[width=80%]
 
-image::img/flux-basic-step1.png[]
+image::img/flux-basic-step1.png[width=80%]
 
-image::img/flux-basic-step2.png[]
+image::img/flux-basic-step2.png[width=80%]
 
-image::img/flux-basic-step3.png[]
+image::img/flux-basic-step3.png[width=80%]
 
-image::img/flux-basic-step4.png[]
+image::img/flux-basic-step4.png[width=80%]
 
-image::img/flux-basic-step5.png[]
+image::img/flux-basic-step5.png[width=80%]
 
 
 == Flux - Emitting Items Programmatically
 
-image::img/flux-create-generate.png[]
+image::img/flux-create-generate.png[width=80%]
 
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/ReactorFluxGenerateAndCreateComparisonTest.java[See: ReactorFluxGenerateAndCreateComparisonTest.java]
 
@@ -48,6 +48,6 @@ Hot Publishers do not create new data producer for each new subscription (as the
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/coldhot/HotPublisherTest.java[See: HotPublisherTest.java]
 
 .Image caption
-image::img/hot-publisher.png[Hot and Cold Publishers - Summary]
+image::img/hot-publisher.png[Hot and Cold Publishers - Summary,width=80%]
 
 
