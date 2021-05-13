@@ -92,4 +92,10 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/cold
 .Image caption
 image::img/hot-publisher.png[Hot and Cold Publishers - Summary,width=80%]
 
+== Threading and scheduling'
 
+=== Default processing model
+
+image::img/flux-scheduler-basic-thread.png[widht="80%"]
+
+By default, all operations in single pipeline are executed in default Thread.
