@@ -28,6 +28,42 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/Reac
 
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/fileservice[See: Reactive text file content]
 
+== Flux operators
+
+=== DelayElements
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/DelayElementsOperatorTest.java[See: DelayElementsOperatorTest.java]
+
+image::img/flux-slack-quest.png[width=80%]
+
+image::img/flux-slack-answer.png[width=80%]
+
+=== FlatMap
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/FlatMapOperatorTest.java[See: FlatMapOperatorTest.java]
+
+=== Handle
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/HandleOperatorTest.java[See: HandleOperatorTest.java]
+
+=== IfEmpty
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/IfEmptyOperatorTest.java[See: IfEmptyOperatorTest.java]
+
+=== LimitRate
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/LimitRateOperatorTest.java[See: LimitRateOperatorTest.java]
+
+=== OnError
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/OnErrorOperatorTest.java[See: OnErrorOperatorTest.java]
+
+=== SwitchIfEmpty
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/SwitchIfEmpty.java[See: SwitchIfEmpty.java]
+
+=== Timeout
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/TimeoutOperatorTest.java[See: TimeoutOperatorTest.java]
+
+=== Transform
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/operators/TransformOperatorTest.java[See: TransformOperatorTest.java]
+
 == Cold and Hot Publishers
 
 https://www.vinsguru.com/reactor-hot-publisher-vs-cold-publisher/
