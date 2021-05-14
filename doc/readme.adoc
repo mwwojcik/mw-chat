@@ -172,3 +172,53 @@ By default, both the producer and the subscriber work in the main thread, but if
 All pipeline steps will be run in the new thread.
 
 image::img/flux-schedulers-switchOn.png[widht=80%]
+
+[source]
+----
+  @DisplayName("Should switch execution to pooled thread after subscribeOn operator")
+    @Test
+    void shouldSwitchExecutionToPooledThreadAfterSubscribeOnOperator() {
+        Flux.create(fluxSink -> {
+            printThreadMessage("create");
+            fluxSink.next(1);
+        })
+            .doFirst(() -> printThreadMessage("second"))
+            .subscribeOn(Schedulers.boundedElastic())
+            .doFirst(() -> printThreadMessage("first"))
+            .subscribe((v) -> printThreadMessage("subscribed"));
+    }
+----
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/threading/SubscribeOnOperatorTest.java[See: SubscribeOnOperatorTest.java]
+
+----
+21:08:30.066 [Test worker] INFO mw.chat.reactor.threading.SubscribeOnOperatorTest - Test worker=>first
+21:08:30.071 [boundedElastic-1] INFO mw.chat.reactor.threading.SubscribeOnOperatorTest - boundedElastic-1=>second
+21:08:30.076 [boundedElastic-1] INFO mw.chat.reactor.threading.SubscribeOnOperatorTest - boundedElastic-1=>create
+21:08:30.077 [boundedElastic-1] INFO mw.chat.reactor.threading.SubscribeOnOperatorTest - boundedElastic-1=>subscribed
+----
+
+In this case, we can observe an interesting behavior of the onFirst operator.
+
+Documentation says:
+
+----
+Add behavior (side-effect) triggered before the Flux is subscribed to, which should be the first event after assembly time.
+----
+
+It was executed very early, before subscribeOn operator, and before thread switching.
+
+It should be remembered that if the pipeline contains many onFirst operators, they are invoked in the reverse order
+
+----
+ Note that when several doFirst(Runnable) operators are used anywhere in a chain of operators, their order of execution is reversed compared to the declaration order (as subscribe signal flows backward, from the ultimate subscriber to the source publisher):
+
+
+ Flux.just(1, 2)
+     .doFirst(() -> System.out.println("three"))
+     .doFirst(() -> System.out.println("two"))
+     .doFirst(() -> System.out.println("one"));
+ //would print one two three
+
+
+----
