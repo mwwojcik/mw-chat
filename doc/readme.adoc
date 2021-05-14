@@ -157,8 +157,18 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/thre
 
 === Schedulers and pools
 
+https://spring.io/blog/2019/12/13/flight-of-the-flux-3-hopping-threads-and-schedulers[See: Flight of the Flux 3 - Hopping Threads and Schedulers]
+
+Creating threads on your own is very inefficient and buggy, so the framework provides several pools, which we can use.
+
 image::img/flux-schedulers-pools.png[widht=80%]
 
+=== Scheduler operators
+
 image::img/flux-schedulers-operators.png[widht=80%]
+
+=== SubscribeOn operator
+By default, both the producer and the subscriber work in the main thread, but if the subscribeOn() operator is used in the pipeline, the entire flow is switched to the new thread.
+All pipeline steps will be run in the new thread.
 
 image::img/flux-schedulers-switchOn.png[widht=80%]
