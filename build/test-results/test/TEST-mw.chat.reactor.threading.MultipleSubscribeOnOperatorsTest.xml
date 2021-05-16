@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-16T14:06:43" hostname="APS00087715-MB" time="5.109">
+  <properties/>
+  <testcase name="Should emit signals through thread from pool closer to producer" classname="mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest" time="5.109"/>
+  <system-out><![CDATA[16:06:43.882 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+16:06:43.916 [parallel-1] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-1=>create
+16:06:43.916 [parallel-1] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-1=>next
+16:06:43.916 [parallel-1] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-1=>run
+16:06:43.916 [parallel-1] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-1=>sub
+16:06:44.897 [parallel-2] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-2=>create
+16:06:44.898 [parallel-2] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-2=>next
+16:06:44.898 [parallel-2] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-2=>run
+16:06:44.898 [parallel-2] INFO mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest - parallel-2=>sub
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
