@@ -51,3 +51,5 @@ mw/chat/reactor/threading/SubscribeOnOperatorTest.java
  mw.chat.reactor.threading.SubscribeOnOperatorTest
 mw/chat/reactor/threading/MultipleSubscribeOnOperatorsTest.java
  mw.chat.reactor.threading.MultipleSubscribeOnOperatorsTest
+mw/chat/reactor/threading/SubscribeOnThreadPoolsTest.java
+ mw.chat.reactor.threading.SubscribeOnThreadPoolsTest

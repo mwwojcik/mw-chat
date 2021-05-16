@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.threading.SubscribeOnThreadPoolsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-16T14:51:32" hostname="APS00087715-MB" time="3.107">
+  <properties/>
+  <testcase name="Should retrieve all signals in the same thread despite pooling" classname="mw.chat.reactor.threading.SubscribeOnThreadPoolsTest" time="3.107"/>
+  <system-out><![CDATA[16:51:32.327 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+16:51:32.349 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>create
+16:51:32.349 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.349 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.351 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.351 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.351 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+16:51:32.354 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
