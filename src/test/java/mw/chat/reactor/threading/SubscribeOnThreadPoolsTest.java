@@ -30,4 +30,27 @@ public class SubscribeOnThreadPoolsTest {
     private void printThreadMessage(String msg) {
         log.info(String.format("%s=>%s", Thread.currentThread().getName(), msg));
     }
+
+
+
+@DisplayName("Should retrieve all signals via many threads")
+@Test
+void shouldRetrieveAllSignalsViaManyThreads() {
+    Flux flux = Flux.create(fluxSink -> {
+        printThreadMessage("create");
+        fluxSink.next(1);
+    }).subscribeOn(Schedulers.parallel()).doOnNext(s -> printThreadMessage("next"));
+
+    Runnable r = () -> {
+        flux.subscribe(s -> printThreadMessage("sub"));
+    };
+
+    for (int i = 0; i < 4; i++) {
+        new Thread(r).start();
+        Sleeper.sleepSecconds(1);
+    }
+
+    Sleeper.sleepSecconds(3);
+}
+
 }

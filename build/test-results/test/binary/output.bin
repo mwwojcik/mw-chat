@@ -1,22 +1,13 @@
-W16:51:32.327 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-j16:51:32.349 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>create
-h16:51:32.349 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.349 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.350 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.351 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.351 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.351 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.352 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
-h16:51:32.353 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
-g16:51:32.354 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+W21:33:45.100 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+j21:33:45.120 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>create
+h21:33:45.121 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>next
+g21:33:45.121 [parallel-1] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-1=>sub
+j21:33:46.119 [parallel-2] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-2=>create
+h21:33:46.119 [parallel-2] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-2=>next
+g21:33:46.119 [parallel-2] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-2=>sub
+j21:33:47.132 [parallel-3] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-3=>create
+h21:33:47.132 [parallel-3] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-3=>next
+g21:33:47.132 [parallel-3] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-3=>sub
+j21:33:48.143 [parallel-4] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-4=>create
+h21:33:48.143 [parallel-4] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-4=>next
+g21:33:48.144 [parallel-4] INFO mw.chat.reactor.threading.SubscribeOnThreadPoolsTest - parallel-4=>sub
