@@ -271,6 +271,8 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/thre
 First, a short test in which we emit 20 signals. This is done in a thread pool.
 I was expecting to see a lot of thread switches, but it turned out that all operations were performed by the same thread.
 
+
+
 [source]
 ----
     @DisplayName("Should retrieve all signals in the same thread despite pooling")
@@ -323,13 +325,10 @@ BUILD SUCCESSFUL in 6s
 ----
 
 
+*It turns out that the thread pool works a bit differently. There is no thread switching within one pipeline (the picture below, on the left), instead of it, the one thread is dedicated to servicing one subscriber. It carries out all operations within one pipeline (the picture below, on the right).*
 
 image::img/flux-parallel-thread-pool-per-subscriber.png[widht=80%]
 
-
-*It turns out that the thread pool works a bit differently. There is no thread switching within one pipeline (the picture above on the left), instead of it, the one thread is dedicated to servicing one subscriber. It carries out all operations within one pipeline (the picture above on the right).*
-
-*Since there are many subscribers multiple threads from the pool are used.*
 
 If we want to see multiple threads activity, multiple subscribers must appear.
 
