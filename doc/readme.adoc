@@ -326,7 +326,8 @@ BUILD SUCCESSFUL in 6s
 
 image::img/flux-parallel-thread-pool-per-subscriber.png[widht=80%]
 
-*It turns out that the thread pool works a bit differently. There is no thread switching within one pipeline (the picture above on the left), instead of one thread is dedicated to servicing one subscriber. It carries out all operations within one pipeline (the picture above on the right).*
+
+*It turns out that the thread pool works a bit differently. There is no thread switching within one pipeline (the picture above on the left), instead of it, the one thread is dedicated to servicing one subscriber. It carries out all operations within one pipeline (the picture above on the right).*
 
 *Since there are many subscribers multiple threads from the pool are used.*
 
