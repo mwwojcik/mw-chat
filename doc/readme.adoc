@@ -269,6 +269,7 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/thre
 === How thread pools work?
 
 First, a short test in which we emit 20 signals. This is done in a thread pool.
+I was expecting to see a lot of thread switches, but it turned out that all operations were performed by the same thread.
 
 [source]
 ----
@@ -321,15 +322,13 @@ First, a short test in which we emit 20 signals. This is done in a thread pool.
 BUILD SUCCESSFUL in 6s
 ----
 
-I was expecting to see a lot of thread names changing when broadcasting and subscribing to signal.
-But it turned out that all operations were performed by the same thread.
+
 
 image::img/flux-parallel-thread-pool-per-subscriber.png[widht=80%]
 
-**It turns out that the thread pool works a bit differently. There is no thread switching within one pipeline (the picture above on the left), instead of one thread is dedicated to servicing one subscriber. It carries out all operations within one pipeline (the picture above on the right).
+*It turns out that the thread pool works a bit differently. There is no thread switching within one pipeline (the picture above on the left), instead of one thread is dedicated to servicing one subscriber. It carries out all operations within one pipeline (the picture above on the right).*
 
-Since there are many subscribers multiple threads from the pool are used.**
-
+*Since there are many subscribers multiple threads from the pool are used.*
 
 
 image::img/flux-parallel-thread-pool.png[widht=80%]
