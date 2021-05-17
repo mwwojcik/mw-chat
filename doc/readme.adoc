@@ -92,7 +92,7 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/cold
 .Image caption
 image::img/hot-publisher.png[Hot and Cold Publishers - Summary,width=80%]
 
-== Threading and scheduling'
+== Threading and scheduling
 
 === Default processing model
 
@@ -122,6 +122,8 @@ All steps block current thread!
 ----
 
 In general, by default,  all steps of the process are performed in subscriber thread.
+We can create a new thread, and make a subscription inside it.
+In this case main thread is not blocked.
 
 [source]
 ----
