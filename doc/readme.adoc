@@ -386,3 +386,5 @@ image::img/flux-schedulers-publishOn.png[widht=80%]
 == PublishOn and SubscribeOn operators in the same pipeline
 
 image::img/flux-schedulers-publishOn-subscribeOn-together.png[widht=80%]
+
+The subscibeOn operator has an influence on the way of emission of events. Specifies the producer pool and everything below, until the publishOn operator is encountered. It, in turn specifies a pool for all items below.
