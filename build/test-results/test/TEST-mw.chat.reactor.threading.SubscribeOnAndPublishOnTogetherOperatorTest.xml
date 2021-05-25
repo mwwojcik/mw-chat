@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.threading.SubscribeOnAndPublishOnTogetherOperatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-25T19:33:47" hostname="APS00087715-MB" time="0.096">
+  <properties/>
+  <testcase name="Should switch ThreadPool after publishOn and set producer ThtreadPool by switch On" classname="mw.chat.reactor.threading.SubscribeOnAndPublishOnTogetherOperatorTest" time="0.096"/>
+  <system-out><![CDATA[21:33:47.087 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+21:33:47.117 [boundedElastic-1] INFO mw.chat.reactor.threading.SubscribeOnAndPublishOnTogetherOperatorTest - boundedElastic-1=>create
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
