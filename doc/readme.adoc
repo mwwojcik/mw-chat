@@ -376,3 +376,13 @@ BUILD SUCCESSFUL in 10s
 image::img/flux-parallel-thread-pool.png[widht=80%]
 
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/threading/SubscribeOnThreadPoolsTest.java[See: SubscribeOnThreadPoolsTest.java]
+
+=== PublishOn operator
+
+This operator switches the thread pool below its point of occurrence.
+
+image::img/flux-schedulers-publishOn.png[widht=80%]
+
+== PublishOn and SubscribeOn operators in the same pipeline
+
+image::img/flux-schedulers-publishOn-subscribeOn-together.png[widht=80%]
