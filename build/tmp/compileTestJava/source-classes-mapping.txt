@@ -53,3 +53,5 @@ mw/chat/reactor/fileservice/FluxFileReader.java
  mw.chat.reactor.fileservice.FluxFileReader
 mw/chat/reactor/threading/SubscribeOnThreadPoolsTest.java
  mw.chat.reactor.threading.SubscribeOnThreadPoolsTest
+mw/chat/reactor/threading/PublishOnOperatorTest.java
+ mw.chat.reactor.threading.PublishOnOperatorTest
