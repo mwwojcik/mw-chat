@@ -441,7 +441,7 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/thre
 
 image::img/flux-backpressure-overflow-strategies.png[width="80%"]
 
---- Buffer strategy
+=== Buffer strategy
 
 ----
 void shuldBufferInMemoryNotConusumedEvents() {
