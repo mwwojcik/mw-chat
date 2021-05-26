@@ -435,3 +435,41 @@ The subscibeOn operator has an influence on the way of emission of events. Speci
 ----
 
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/threading/SubscribeOnAndPublishOnTogetherOperatorTest.java[See: SubscribeOnAndPublishOnTogetherOperatorTest.java]
+
+
+== Backpressure and overflow strategy
+
+image::img/flux-backpressure-overflow-strategies.png[width="80%"]
+
+--- Buffer strategy
+
+----
+void shuldBufferInMemoryNotConusumedEvents() {
+        Flux.create(fluxSink -> {
+            for (int i = 1; i < 501; i++) {
+                fluxSink.next(i);
+                log.info("Pushed=>" + i);
+            }
+            fluxSink.complete();
+        }).publishOn(Schedulers.boundedElastic())
+            .doOnNext(i->{
+                Sleeper.sleepSecconds(1);
+                log.info("Received=>"+i);
+            })
+            .subscribe(DefaultSimpleSubscriber.create());
+
+        Sleeper.sleepSecconds(5);
+    }
+----
+----
+08:02:37.846 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDefaultStrategyTest - Pushed=>497
+08:02:37.846 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDefaultStrategyTest - Pushed=>498
+08:02:37.846 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDefaultStrategyTest - Pushed=>499
+08:02:37.846 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDefaultStrategyTest - Pushed=>500
+08:02:38.809 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDefaultStrategyTest - Received=>1
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 1
+----
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDefaultStrategyTest.java[See: BackpressureDefaultStrategyTest.java]
+
+In this test we can see buffer overflow strategy. If the Producer emits more events than the Subscriber can consume, they are cached in memory.

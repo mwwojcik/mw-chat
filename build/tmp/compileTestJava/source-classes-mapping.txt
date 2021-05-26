@@ -57,3 +57,5 @@ mw/chat/reactor/threading/PublishOnOperatorTest.java
  mw.chat.reactor.threading.PublishOnOperatorTest
 mw/chat/reactor/threading/SubscribeOnAndPublishOnTogetherOperatorTest.java
  mw.chat.reactor.threading.SubscribeOnAndPublishOnTogetherOperatorTest
+mw/chat/reactor/backpressure/BackpressureDefaultStrategyTest.java
+ mw.chat.reactor.backpressure.BackpressureDefaultStrategyTest
