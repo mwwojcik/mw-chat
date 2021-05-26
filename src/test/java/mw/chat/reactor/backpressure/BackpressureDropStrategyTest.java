@@ -20,9 +20,11 @@ public class BackpressureDropStrategyTest {
             for (int i = 1; i < 501; i++) {
                 fluxSink.next(i);
                 log.info("Pushed=>" + i);
+                Sleeper.sleepMillis(1);
             }
             fluxSink.complete();
-        }).onBackpressureDrop()
+        }).onBackpressureDrop(i->log.info("DROPPED=>"+i))
+            .subscribeOn(Schedulers.boundedElastic())
             .publishOn(Schedulers.boundedElastic())
             .doOnNext(i -> {
             Sleeper.sleepMillis(10);

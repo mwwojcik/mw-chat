@@ -59,5 +59,7 @@ mw/chat/reactor/coldhot/HotPublisherTest.java
  mw.chat.reactor.coldhot.HotPublisherTest
 mw/chat/reactor/Sleeper.java
  mw.chat.reactor.Sleeper
+mw/chat/reactor/backpressure/BackpressureDropStrategySmallBufferTest.java
+ mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest
 mw/chat/reactor/backpressure/BackpressureDropStrategyTest.java
  mw.chat.reactor.backpressure.BackpressureDropStrategyTest

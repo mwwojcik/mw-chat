@@ -478,13 +478,16 @@ In this strategy, Producer emits complete signal when queue is overloaded.
 
 ----
     void shouldEmitCompleteSignalWhenQueueIsOverloaded() {
+
         Flux.create(fluxSink -> {
             for (int i = 1; i < 501; i++) {
                 fluxSink.next(i);
                 log.info("Pushed=>" + i);
+                Sleeper.sleepMillis(1);
             }
             fluxSink.complete();
-        }).onBackpressureDrop()
+        }).onBackpressureDrop(i->log.info("DROPPED=>"+i))
+            .subscribeOn(Schedulers.boundedElastic())
             .publishOn(Schedulers.boundedElastic())
             .doOnNext(i -> {
             Sleeper.sleepMillis(10);
@@ -496,21 +499,21 @@ In this strategy, Producer emits complete signal when queue is overloaded.
 ----
 
 ----
-08:20:00.347 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>253
-boundedElastic-1 => => DefaultSimpleSubscriber Received : 253
-08:20:00.362 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>254
-boundedElastic-1 => => DefaultSimpleSubscriber Received : 254
-08:20:00.377 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>255
-boundedElastic-1 => => DefaultSimpleSubscriber Received : 255
-08:20:00.393 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>256
-boundedElastic-1 => => DefaultSimpleSubscriber Received : 256
-boundedElastic-1 => => DefaultSimpleSubscriber Completed
+10:30:03.725 [boundedElastic-2] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>253
+10:30:03.727 [boundedElastic-2] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>254
+10:30:03.729 [boundedElastic-2] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>255
+10:30:03.731 [boundedElastic-2] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>256
+10:30:03.733 [boundedElastic-2] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - DROPPED=>257
+10:30:03.733 [boundedElastic-2] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>257
+10:30:03.734 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>46
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 46
 ----
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDropStrategyTest.java[See: BackpressureDropStrategyTest.java]
 
-Producer emitted 500 events, but after receiving 256 elements, complete signal was sent.
+Publisher emits 500 events, 256 of them is buffered in the Queue. Subscriber gets it at once (from buffer). But only them. Rest of events is dropped.
 
-*The limit of 256 items comes from the reactor.util.concurrent.Queues class - its reactor.bufferSize.small property. *
+
+*The limit of 256 items comes from the reactor.util.concurrent.Queues class - its reactor.bufferSize.small property.*
 
 ----
 /**
@@ -521,3 +524,162 @@ Producer emitted 500 events, but after receiving 256 elements, complete signal w
 			Integer.parseInt(System.getProperty("reactor.bufferSize.small", "256")));
 ----
 
+This mechanism is easier to observe when the Publisher is faster than the Subscriber and the buffer is very small.
+
+In this case we can see very interesting thing:
+
+----
+ void shouldEmitCompleteSignalWhenQueueIsOverloaded() {
+        System.setProperty("reactor.bufferSize.small", "16");
+        Flux.create(fluxSink -> {
+            for (int i = 1; i < 200; i++) {
+                fluxSink.next(i);
+                log.info("Pushed=>" + i);
+                Sleeper.sleepMillis(1);
+            }
+            fluxSink.complete();
+        }).onBackpressureDrop((i)->log.info("Dropped=>"+i))
+            .publishOn(Schedulers.boundedElastic())
+            .doOnNext(i -> {
+            Sleeper.sleepMillis(10);
+        }).subscribe(DefaultSimpleSubscriber.create());
+
+        Sleeper.sleepSecconds(60);
+    }
+----
+
+----
+22:41:59.317 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+22:41:59.350 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>1
+22:41:59.353 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>2
+22:41:59.355 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>3
+22:41:59.357 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>4
+22:41:59.360 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>5
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 1
+22:41:59.362 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>6
+22:41:59.365 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>7
+22:41:59.367 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>8
+22:41:59.369 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>9
+22:41:59.371 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>10
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 2
+22:41:59.374 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>11
+22:41:59.376 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>12
+22:41:59.378 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>13
+22:41:59.381 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>14
+22:41:59.385 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>15
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 3
+22:41:59.387 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>16
+22:41:59.389 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>17
+22:41:59.389 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>17
+22:41:59.391 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>18
+22:41:59.391 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>18
+22:41:59.394 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>19
+22:41:59.394 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>19
+22:41:59.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>20
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 4
+22:41:59.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>20
+22:41:59.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>21
+22:41:59.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>21
+22:41:59.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>22
+22:41:59.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>22
+22:41:59.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>23
+22:41:59.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>23
+22:41:59.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>24
+22:41:59.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>24
+22:41:59.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>25
+22:41:59.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>25
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 5
+22:41:59.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>26
+22:41:59.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>26
+22:41:59.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>27
+22:41:59.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>27
+22:41:59.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>28
+22:41:59.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>28
+22:41:59.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>29
+22:41:59.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>29
+22:41:59.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>30
+22:41:59.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>30
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 6
+22:41:59.423 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>31
+22:41:59.423 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>31
+22:41:59.425 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>32
+22:41:59.425 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>32
+22:41:59.427 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>33
+22:41:59.427 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>33
+22:41:59.429 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>34
+22:41:59.429 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>34
+22:41:59.431 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>35
+22:41:59.431 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>35
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 7
+22:41:59.433 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>36
+22:41:59.433 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>36
+22:41:59.435 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>37
+22:41:59.435 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>37
+22:41:59.437 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>38
+22:41:59.437 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>38
+22:41:59.439 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>39
+22:41:59.439 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>39
+22:41:59.442 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>40
+22:41:59.442 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>40
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 8
+22:41:59.445 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>41
+22:41:59.445 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>41
+22:41:59.447 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>42
+22:41:59.447 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>42
+22:41:59.449 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>43
+22:41:59.449 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>43
+22:41:59.451 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>44
+22:41:59.451 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>44
+22:41:59.453 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>45
+22:41:59.453 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>45
+22:41:59.455 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>46
+22:41:59.455 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>46
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 9
+22:41:59.458 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>47
+22:41:59.458 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>47
+22:41:59.461 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>48
+22:41:59.461 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>48
+22:41:59.464 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>49
+22:41:59.464 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>49
+22:41:59.466 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>50
+22:41:59.466 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>50
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 10
+22:41:59.468 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>51
+22:41:59.468 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>51
+22:41:59.470 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>52
+22:41:59.470 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>52
+22:41:59.472 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>53
+22:41:59.472 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>53
+22:41:59.475 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>54
+22:41:59.475 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>54
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 11
+22:41:59.478 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>55
+22:41:59.478 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>55
+22:41:59.480 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>56
+22:41:59.480 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>56
+22:41:59.482 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>57
+22:41:59.482 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>57
+22:41:59.484 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>58
+22:41:59.484 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>58
+22:41:59.486 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>59
+22:41:59.486 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>59
+22:41:59.488 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Dropped=>60
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 12
+22:41:59.488 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>60
+22:41:59.490 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>61
+22:41:59.492 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>62
+22:41:59.494 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>63
+22:41:59.496 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>64
+22:41:59.497 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>65
+22:41:59.499 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>66
+22:41:59.501 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>67
+22:41:59.503 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest - Pushed=>68
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 13
+----
+
+Our buffer is very small, it can only hold 16 items.
+After the 16th element, further messages are dropped.
+
+When the queue frees up 75% of its occupancy - at the 12th element it is re-filled. Therefore, items 61-72 will not be deleted. They will go to the buffer.
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDropStrategySmallBufferTest.java[See: BackpressureDropStrategySmallBufferTest.java]
