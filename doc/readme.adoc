@@ -442,7 +442,7 @@ https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/thre
 image::img/flux-backpressure-overflow-strategies.png[width="80%"]
 
 === Buffer strategy
-
+If the Producer emits more events than the Subscriber can consume, they are cached in memory.
 ----
 void shuldBufferInMemoryNotConusumedEvents() {
         Flux.create(fluxSink -> {
@@ -472,4 +472,52 @@ boundedElastic-1 => => DefaultSimpleSubscriber Received : 1
 
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDefaultStrategyTest.java[See: BackpressureDefaultStrategyTest.java]
 
-In this test we can see buffer overflow strategy. If the Producer emits more events than the Subscriber can consume, they are cached in memory.
+=== Drop strategy
+
+In this strategy, Producer emits complete signal when queue is overloaded.
+
+----
+    void shouldEmitCompleteSignalWhenQueueIsOverloaded() {
+        Flux.create(fluxSink -> {
+            for (int i = 1; i < 501; i++) {
+                fluxSink.next(i);
+                log.info("Pushed=>" + i);
+            }
+            fluxSink.complete();
+        }).onBackpressureDrop()
+            .publishOn(Schedulers.boundedElastic())
+            .doOnNext(i -> {
+            Sleeper.sleepMillis(10);
+            log.info("Received=>" + i);
+        }).subscribe(DefaultSimpleSubscriber.create());
+
+        Sleeper.sleepSecconds(50);
+    }
+----
+
+----
+08:20:00.347 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>253
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 253
+08:20:00.362 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>254
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 254
+08:20:00.377 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>255
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 255
+08:20:00.393 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>256
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 256
+boundedElastic-1 => => DefaultSimpleSubscriber Completed
+----
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDropStrategyTest.java[See: BackpressureDropStrategyTest.java]
+
+Producer emitted 500 events, but after receiving 256 elements, complete signal was sent.
+
+*The limit of 256 items comes from the reactor.util.concurrent.Queues class - its reactor.bufferSize.small property. *
+
+----
+/**
+	 * A small default of available slots in a given container, compromise between intensive pipelines, small
+	 * subscribers numbers and memory use.
+	 */
+	public static final int SMALL_BUFFER_SIZE = Math.max(16,
+			Integer.parseInt(System.getProperty("reactor.bufferSize.small", "256")));
+----
+

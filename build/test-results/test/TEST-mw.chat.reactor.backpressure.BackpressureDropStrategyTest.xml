@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.backpressure.BackpressureDropStrategyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-26T06:19:56" hostname="APS00087715-MB" time="50.145">
+  <properties/>
+  <testcase name="Should emit complete signal when queue is overloaded" classname="mw.chat.reactor.backpressure.BackpressureDropStrategyTest" time="50.145"/>
+  <system-out><![CDATA[08:19:56.363 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>1
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>2
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>3
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>4
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>5
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>6
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>7
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>8
+08:19:56.396 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>9
+08:19:56.397 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>10
+08:19:56.397 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>11
+08:19:56.397 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>12
+08:19:56.397 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>13
+08:19:56.397 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>14
+08:19:56.397 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>15
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>16
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>17
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>18
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>19
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>20
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>21
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>22
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>23
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>24
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>25
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>26
+08:19:56.398 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>27
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>28
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>29
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>30
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>31
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>32
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>33
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>34
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>35
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>36
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>37
+08:19:56.399 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>38
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>39
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>40
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>41
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>42
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>43
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>44
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>45
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>46
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>47
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>48
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>49
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>50
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>51
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>52
+08:19:56.400 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>53
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>54
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>55
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>56
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>57
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>58
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>59
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>60
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>61
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>62
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>63
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>64
+08:19:56.401 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>65
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>66
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>67
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>68
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>69
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>70
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>71
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>72
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>73
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>74
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>75
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>76
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>77
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>78
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>79
+08:19:56.402 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>80
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>81
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>82
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>83
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>84
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>85
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>86
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>87
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>88
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>89
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>90
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>91
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>92
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>93
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>94
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>95
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>96
+08:19:56.403 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>97
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>98
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>99
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>100
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>101
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>102
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>103
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>104
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>105
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>106
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>107
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>108
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>109
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>110
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>111
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>112
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>113
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>114
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>115
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>116
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>117
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>118
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>119
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>120
+08:19:56.404 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>121
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>122
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>123
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>124
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>125
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>126
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>127
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>128
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>129
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>130
+08:19:56.405 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>131
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>132
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>133
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>134
+08:19:56.406 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>1
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>135
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>136
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>137
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>138
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>139
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 1
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>140
+08:19:56.406 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>141
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>142
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>143
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>144
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>145
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>146
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>147
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>148
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>149
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>150
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>151
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>152
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>153
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>154
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>155
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>156
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>157
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>158
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>159
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>160
+08:19:56.407 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>161
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>162
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>163
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>164
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>165
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>166
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>167
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>168
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>169
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>170
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>171
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>172
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>173
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>174
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>175
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>176
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>177
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>178
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>179
+08:19:56.408 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>180
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>181
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>182
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>183
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>184
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>185
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>186
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>187
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>188
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>189
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>190
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>191
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>192
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>193
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>194
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>195
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>196
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>197
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>198
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>199
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>200
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>201
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>202
+08:19:56.409 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>203
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>204
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>205
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>206
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>207
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>208
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>209
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>210
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>211
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>212
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>213
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>214
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>215
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>216
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>217
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>218
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>219
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>220
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>221
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>222
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>223
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>224
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>225
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>226
+08:19:56.410 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>227
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>228
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>229
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>230
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>231
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>232
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>233
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>234
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>235
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>236
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>237
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>238
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>239
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>240
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>241
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>242
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>243
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>244
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>245
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>246
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>247
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>248
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>249
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>250
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>251
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>252
+08:19:56.411 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>253
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>254
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>255
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>256
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>257
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>258
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>259
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>260
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>261
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>262
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>263
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>264
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>265
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>266
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>267
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>268
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>269
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>270
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>271
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>272
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>273
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>274
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>275
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>276
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>277
+08:19:56.412 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>278
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>279
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>280
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>281
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>282
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>283
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>284
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>285
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>286
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>287
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>288
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>289
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>290
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>291
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>292
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>293
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>294
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>295
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>296
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>297
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>298
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>299
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>300
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>301
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>302
+08:19:56.413 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>303
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>304
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>305
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>306
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>307
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>308
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>309
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>310
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>311
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>312
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>313
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>314
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>315
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>316
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>317
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>318
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>319
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>320
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>321
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>322
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>323
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>324
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>325
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>326
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>327
+08:19:56.414 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>328
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>329
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>330
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>331
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>332
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>333
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>334
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>335
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>336
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>337
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>338
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>339
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>340
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>341
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>342
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>343
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>344
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>345
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>346
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>347
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>348
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>349
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>350
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>351
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>352
+08:19:56.415 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>353
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>354
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>355
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>356
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>357
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>358
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>359
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>360
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>361
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>362
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>363
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>364
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>365
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>366
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>367
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>368
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>369
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>370
+08:19:56.416 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>371
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>372
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>373
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>374
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>375
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>376
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>377
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>378
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>379
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>380
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>381
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>382
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>383
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>384
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>385
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>386
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>387
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>388
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>389
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>390
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>391
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>392
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>393
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>394
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>395
+08:19:56.417 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>396
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>397
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>398
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>399
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>400
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>401
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>402
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>403
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>404
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>405
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>406
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>407
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>408
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>409
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>410
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>411
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>412
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>413
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>414
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>415
+08:19:56.418 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>416
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>417
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>418
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>419
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>420
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>421
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>422
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>423
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>424
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>425
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>426
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>427
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>428
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>429
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>430
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>431
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>432
+08:19:56.419 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>433
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>434
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>435
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>436
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>437
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>438
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>439
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>440
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>441
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>442
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>443
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>444
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>445
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>446
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>447
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>448
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>449
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>450
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>451
+08:19:56.420 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>452
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>453
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>454
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>455
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>456
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>457
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>458
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>459
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>460
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>461
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>462
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>463
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>464
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>465
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>466
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>467
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>468
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>469
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>470
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>471
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>472
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>473
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>474
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>475
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>476
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>477
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>478
+08:19:56.421 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>479
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>480
+08:19:56.422 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>2
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>481
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>482
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>483
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>484
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>485
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>486
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 2
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>487
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>488
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>489
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>490
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>491
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>492
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>493
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>494
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>495
+08:19:56.422 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>496
+08:19:56.423 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>497
+08:19:56.423 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>498
+08:19:56.423 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>499
+08:19:56.423 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Pushed=>500
+08:19:56.438 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>3
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 3
+08:19:56.454 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>4
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 4
+08:19:56.470 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>5
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 5
+08:19:56.486 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>6
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 6
+08:19:56.503 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>7
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 7
+08:19:56.519 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>8
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 8
+08:19:56.534 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>9
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 9
+08:19:56.550 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>10
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 10
+08:19:56.565 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>11
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 11
+08:19:56.581 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>12
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 12
+08:19:56.596 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>13
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 13
+08:19:56.612 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>14
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 14
+08:19:56.628 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>15
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 15
+08:19:56.643 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>16
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 16
+08:19:56.659 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>17
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 17
+08:19:56.675 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>18
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 18
+08:19:56.690 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>19
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 19
+08:19:56.705 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>20
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 20
+08:19:56.721 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>21
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 21
+08:19:56.737 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>22
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 22
+08:19:56.752 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>23
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 23
+08:19:56.769 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>24
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 24
+08:19:56.784 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>25
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 25
+08:19:56.799 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>26
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 26
+08:19:56.815 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>27
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 27
+08:19:56.831 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>28
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 28
+08:19:56.846 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>29
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 29
+08:19:56.862 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>30
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 30
+08:19:56.878 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>31
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 31
+08:19:56.894 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>32
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 32
+08:19:56.909 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>33
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 33
+08:19:56.924 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>34
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 34
+08:19:56.939 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>35
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 35
+08:19:56.955 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>36
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 36
+08:19:56.970 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>37
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 37
+08:19:56.986 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>38
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 38
+08:19:57.002 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>39
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 39
+08:19:57.018 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>40
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 40
+08:19:57.033 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>41
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 41
+08:19:57.049 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>42
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 42
+08:19:57.064 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>43
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 43
+08:19:57.080 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>44
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 44
+08:19:57.095 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>45
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 45
+08:19:57.111 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>46
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 46
+08:19:57.127 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>47
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 47
+08:19:57.143 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>48
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 48
+08:19:57.159 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>49
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 49
+08:19:57.175 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>50
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 50
+08:19:57.189 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>51
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 51
+08:19:57.205 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>52
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 52
+08:19:57.220 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>53
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 53
+08:19:57.236 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>54
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 54
+08:19:57.251 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>55
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 55
+08:19:57.267 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>56
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 56
+08:19:57.282 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>57
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 57
+08:19:57.298 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>58
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 58
+08:19:57.313 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>59
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 59
+08:19:57.329 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>60
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 60
+08:19:57.344 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>61
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 61
+08:19:57.360 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>62
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 62
+08:19:57.376 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>63
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 63
+08:19:57.391 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>64
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 64
+08:19:57.406 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>65
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 65
+08:19:57.422 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>66
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 66
+08:19:57.437 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>67
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 67
+08:19:57.453 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>68
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 68
+08:19:57.469 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>69
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 69
+08:19:57.485 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>70
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 70
+08:19:57.500 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>71
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 71
+08:19:57.517 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>72
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 72
+08:19:57.532 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>73
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 73
+08:19:57.548 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>74
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 74
+08:19:57.564 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>75
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 75
+08:19:57.579 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>76
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 76
+08:19:57.595 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>77
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 77
+08:19:57.610 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>78
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 78
+08:19:57.625 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>79
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 79
+08:19:57.641 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>80
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 80
+08:19:57.656 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>81
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 81
+08:19:57.672 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>82
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 82
+08:19:57.687 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>83
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 83
+08:19:57.704 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>84
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 84
+08:19:57.719 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>85
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 85
+08:19:57.734 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>86
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 86
+08:19:57.750 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>87
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 87
+08:19:57.766 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>88
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 88
+08:19:57.781 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>89
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 89
+08:19:57.797 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>90
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 90
+08:19:57.812 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>91
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 91
+08:19:57.828 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>92
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 92
+08:19:57.843 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>93
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 93
+08:19:57.859 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>94
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 94
+08:19:57.875 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>95
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 95
+08:19:57.890 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>96
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 96
+08:19:57.906 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>97
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 97
+08:19:57.921 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>98
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 98
+08:19:57.937 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>99
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 99
+08:19:57.953 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>100
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 100
+08:19:57.969 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>101
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 101
+08:19:57.984 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>102
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 102
+08:19:58.000 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>103
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 103
+08:19:58.016 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>104
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 104
+08:19:58.032 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>105
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 105
+08:19:58.047 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>106
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 106
+08:19:58.063 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>107
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 107
+08:19:58.078 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>108
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 108
+08:19:58.094 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>109
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 109
+08:19:58.110 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>110
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 110
+08:19:58.126 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>111
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 111
+08:19:58.141 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>112
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 112
+08:19:58.157 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>113
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 113
+08:19:58.173 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>114
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 114
+08:19:58.189 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>115
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 115
+08:19:58.204 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>116
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 116
+08:19:58.221 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>117
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 117
+08:19:58.236 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>118
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 118
+08:19:58.251 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>119
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 119
+08:19:58.267 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>120
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 120
+08:19:58.282 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>121
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 121
+08:19:58.298 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>122
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 122
+08:19:58.314 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>123
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 123
+08:19:58.329 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>124
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 124
+08:19:58.345 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>125
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 125
+08:19:58.361 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>126
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 126
+08:19:58.376 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>127
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 127
+08:19:58.392 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>128
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 128
+08:19:58.407 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>129
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 129
+08:19:58.423 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>130
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 130
+08:19:58.439 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>131
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 131
+08:19:58.455 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>132
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 132
+08:19:58.471 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>133
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 133
+08:19:58.487 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>134
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 134
+08:19:58.503 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>135
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 135
+08:19:58.518 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>136
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 136
+08:19:58.534 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>137
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 137
+08:19:58.549 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>138
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 138
+08:19:58.565 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>139
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 139
+08:19:58.580 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>140
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 140
+08:19:58.597 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>141
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 141
+08:19:58.613 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>142
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 142
+08:19:58.628 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>143
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 143
+08:19:58.644 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>144
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 144
+08:19:58.660 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>145
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 145
+08:19:58.675 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>146
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 146
+08:19:58.692 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>147
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 147
+08:19:58.707 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>148
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 148
+08:19:58.722 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>149
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 149
+08:19:58.738 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>150
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 150
+08:19:58.753 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>151
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 151
+08:19:58.769 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>152
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 152
+08:19:58.785 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>153
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 153
+08:19:58.801 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>154
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 154
+08:19:58.816 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>155
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 155
+08:19:58.833 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>156
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 156
+08:19:58.849 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>157
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 157
+08:19:58.864 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>158
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 158
+08:19:58.879 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>159
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 159
+08:19:58.895 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>160
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 160
+08:19:58.911 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>161
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 161
+08:19:58.927 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>162
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 162
+08:19:58.942 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>163
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 163
+08:19:58.958 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>164
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 164
+08:19:58.973 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>165
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 165
+08:19:58.989 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>166
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 166
+08:19:59.005 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>167
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 167
+08:19:59.020 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>168
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 168
+08:19:59.036 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>169
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 169
+08:19:59.051 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>170
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 170
+08:19:59.067 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>171
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 171
+08:19:59.083 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>172
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 172
+08:19:59.098 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>173
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 173
+08:19:59.113 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>174
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 174
+08:19:59.129 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>175
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 175
+08:19:59.144 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>176
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 176
+08:19:59.160 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>177
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 177
+08:19:59.176 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>178
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 178
+08:19:59.191 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>179
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 179
+08:19:59.207 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>180
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 180
+08:19:59.222 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>181
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 181
+08:19:59.237 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>182
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 182
+08:19:59.252 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>183
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 183
+08:19:59.267 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>184
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 184
+08:19:59.283 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>185
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 185
+08:19:59.299 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>186
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 186
+08:19:59.314 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>187
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 187
+08:19:59.329 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>188
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 188
+08:19:59.345 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>189
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 189
+08:19:59.361 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>190
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 190
+08:19:59.376 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>191
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 191
+08:19:59.392 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>192
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 192
+08:19:59.408 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>193
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 193
+08:19:59.424 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>194
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 194
+08:19:59.440 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>195
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 195
+08:19:59.456 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>196
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 196
+08:19:59.472 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>197
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 197
+08:19:59.487 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>198
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 198
+08:19:59.502 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>199
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 199
+08:19:59.518 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>200
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 200
+08:19:59.534 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>201
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 201
+08:19:59.550 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>202
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 202
+08:19:59.565 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>203
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 203
+08:19:59.580 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>204
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 204
+08:19:59.596 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>205
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 205
+08:19:59.611 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>206
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 206
+08:19:59.627 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>207
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 207
+08:19:59.642 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>208
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 208
+08:19:59.658 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>209
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 209
+08:19:59.674 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>210
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 210
+08:19:59.689 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>211
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 211
+08:19:59.705 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>212
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 212
+08:19:59.720 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>213
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 213
+08:19:59.736 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>214
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 214
+08:19:59.751 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>215
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 215
+08:19:59.767 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>216
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 216
+08:19:59.782 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>217
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 217
+08:19:59.798 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>218
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 218
+08:19:59.814 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>219
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 219
+08:19:59.829 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>220
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 220
+08:19:59.845 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>221
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 221
+08:19:59.861 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>222
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 222
+08:19:59.877 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>223
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 223
+08:19:59.892 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>224
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 224
+08:19:59.908 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>225
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 225
+08:19:59.924 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>226
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 226
+08:19:59.939 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>227
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 227
+08:19:59.955 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>228
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 228
+08:19:59.970 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>229
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 229
+08:19:59.986 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>230
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 230
+08:20:00.001 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>231
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 231
+08:20:00.017 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>232
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 232
+08:20:00.033 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>233
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 233
+08:20:00.049 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>234
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 234
+08:20:00.065 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>235
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 235
+08:20:00.081 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>236
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 236
+08:20:00.097 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>237
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 237
+08:20:00.112 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>238
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 238
+08:20:00.128 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>239
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 239
+08:20:00.144 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>240
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 240
+08:20:00.160 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>241
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 241
+08:20:00.176 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>242
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 242
+08:20:00.191 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>243
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 243
+08:20:00.207 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>244
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 244
+08:20:00.222 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>245
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 245
+08:20:00.238 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>246
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 246
+08:20:00.254 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>247
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 247
+08:20:00.270 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>248
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 248
+08:20:00.285 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>249
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 249
+08:20:00.300 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>250
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 250
+08:20:00.316 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>251
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 251
+08:20:00.332 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>252
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 252
+08:20:00.347 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>253
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 253
+08:20:00.362 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>254
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 254
+08:20:00.377 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>255
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 255
+08:20:00.393 [boundedElastic-1] INFO mw.chat.reactor.backpressure.BackpressureDropStrategyTest - Received=>256
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 256
+boundedElastic-1 => => DefaultSimpleSubscriber Completed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
