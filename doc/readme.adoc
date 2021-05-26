@@ -682,4 +682,6 @@ After the 16th element, further messages are dropped.
 
 When the queue frees up 75% of its occupancy - at the 12th element it is re-filled. Therefore, items 61-72 will not be deleted. They will go to the buffer.
 
+So after receiving the 16th element, the next one will be the first not dropped, added after the 12th element, which is - 61.
+
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDropStrategySmallBufferTest.java[See: BackpressureDropStrategySmallBufferTest.java]
