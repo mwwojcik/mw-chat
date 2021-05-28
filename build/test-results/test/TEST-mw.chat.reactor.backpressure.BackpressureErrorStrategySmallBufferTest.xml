@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-28T16:52:20" hostname="APS00087715-MB" time="60.156">
+  <properties/>
+  <testcase name="Should return an error when buffer is overloaded" classname="mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest" time="60.156"/>
+  <system-out><![CDATA[18:52:20.702 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+18:52:20.739 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>1
+18:52:20.742 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>2
+18:52:20.744 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>3
+18:52:20.746 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>4
+18:52:20.748 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>5
+18:52:20.750 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>6
+18:52:20.752 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>7
+18:52:20.754 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>8
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 1
+18:52:20.756 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>9
+18:52:20.758 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>10
+18:52:20.760 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>11
+18:52:20.762 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>12
+18:52:20.765 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>13
+18:52:20.767 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>14
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 2
+18:52:20.769 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>15
+18:52:20.772 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>16
+18:52:20.776 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>17
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 3
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 4
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 5
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 6
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 7
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 8
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 9
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 10
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 11
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 12
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 13
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 14
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 15
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 16
+boundedElastic-1 => => DefaultSimpleSubscriber Error : reactor.core.Exceptions$OverflowException: The receiver is overrun by more signals than expected (bounded queue...)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

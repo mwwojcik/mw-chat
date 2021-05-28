@@ -742,6 +742,8 @@ In this strategy, when the buffer is refilled, the item that precedes the reques
 
 Element before = 99
 
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureLatestStrategySmallBufferTest.java[See: BackpressureLatestStrategySmallBufferTest.java]
+
 === Drop vs Latest
 
 image:img/onBackPressureDrop.png[width:80%]
@@ -751,3 +753,50 @@ image:img/onBackPressureLatest.png[width:80%]
 http://reactivex.io/documentation/operators/backpressure.html[Marvel's source site]
 
 
+=== Error strategy
+
+In this strategy, when buffer is overloaded, exception is thrown.
+
+----
+ void shouldReturnAnErrorWhenBufferIsOverloaded() {
+
+        System.setProperty("reactor.bufferSize.small", "16");
+        Flux.create(fluxSink -> {
+            for (int i = 1; i < 200&&!fluxSink.isCancelled(); i++) {
+                fluxSink.next(i);
+                log.info("Pushed=>" + i);
+                Sleeper.sleepMillis(1);
+            }
+            fluxSink.complete();
+        }).onBackpressureError()
+            .publishOn(Schedulers.boundedElastic())
+            .doOnNext(i -> {
+            Sleeper.sleepMillis(10);
+        }).subscribe(DefaultSimpleSubscriber.create());
+
+        Sleeper.sleepSecconds(60);
+    }
+----
+
+----
+18:52:20.769 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>15
+18:52:20.772 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>16
+18:52:20.776 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest - Pushed=>17
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 3
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 4
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 5
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 6
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 7
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 8
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 9
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 10
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 11
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 12
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 13
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 14
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 15
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 16
+boundedElastic-1 => => DefaultSimpleSubscriber Error : reactor.core.Exceptions$OverflowException: The receiver is overrun by more signals than expected (bounded queue...)
+----
+
+https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureErrorStrategySmallBufferTest.java[See: BackpressureErrorStrategySmallBufferTest.java]

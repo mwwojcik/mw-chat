@@ -65,3 +65,5 @@ mw/chat/reactor/backpressure/BackpressureDropStrategyTest.java
  mw.chat.reactor.backpressure.BackpressureDropStrategyTest
 mw/chat/reactor/backpressure/BackpressureDropStrategySmallBufferTest.java
  mw.chat.reactor.backpressure.BackpressureDropStrategySmallBufferTest
+mw/chat/reactor/backpressure/BackpressureErrorStrategySmallBufferTest.java
+ mw.chat.reactor.backpressure.BackpressureErrorStrategySmallBufferTest
