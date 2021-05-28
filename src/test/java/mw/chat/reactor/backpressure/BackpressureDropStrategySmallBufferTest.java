@@ -22,7 +22,7 @@ public class BackpressureDropStrategySmallBufferTest {
                 Sleeper.sleepMillis(1);
             }
             fluxSink.complete();
-        }).onBackpressureDrop((i)->log.info("Dropped=>"+i))
+        }).onBackpressureDrop()
             .publishOn(Schedulers.boundedElastic())
             .doOnNext(i -> {
             Sleeper.sleepMillis(10);

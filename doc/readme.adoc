@@ -684,4 +684,70 @@ When the queue frees up 75% of its occupancy - at the 12th element it is re-fill
 
 So after receiving the 16th element, the next one will be the first not dropped, added after the 12th element, which is - 61.
 
+In this strategy, when the buffer is refilled, the item that precedes the request will be retrieved.
+
+75% of 16 = 12
+
+Element after = 61
+
 https://github.com/mwwojcik/mw-chat/blob/main/src/test/java/mw/chat/reactor/backpressure/BackpressureDropStrategySmallBufferTest.java[See: BackpressureDropStrategySmallBufferTest.java]
+
+=== Latest strategy
+----
+void shouldShowLatestOverviewBackpressureStrategy() {
+
+        System.setProperty("reactor.bufferSize.small", "16");
+        Flux.create(fluxSink -> {
+            for (int i = 1; i < 200; i++) {
+                fluxSink.next(i);
+                log.info("Pushed=>" + i);
+                Sleeper.sleepMillis(1);
+            }
+            fluxSink.complete();
+        }).onBackpressureLatest()
+            .publishOn(Schedulers.boundedElastic())
+            .doOnNext(i -> {
+            Sleeper.sleepMillis(10);
+        }).subscribe(DefaultSimpleSubscriber.create());
+
+        Sleeper.sleepSecconds(60);
+    }
+----
+
+----
+
+06:10:18.714 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>99
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 12
+06:10:18.716 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>100
+
+....
+
+06:10:18.758 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>128
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 16
+06:10:18.759 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>129
+06:10:18.761 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>130
+06:10:18.762 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>131
+06:10:18.764 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>132
+06:10:18.765 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>133
+06:10:18.767 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>134
+06:10:18.768 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>135
+06:10:18.770 [Test worker] INFO mw.chat.reactor.backpressure.BackpressureLatestStrategySmallBufferTest - Pushed=>136
+boundedElastic-1 => => DefaultSimpleSubscriber Received : 99
+
+----
+
+In this strategy, when the buffer is refilled, the item that precedes the request will be retrieved.
+
+75% of 16 = 12
+
+Element before = 99
+
+=== Drop vs Latest
+
+image:img/onBackPressureDrop.png[width:80%]
+http://reactivex.io/documentation/operators/backpressure.html[Marvel's source site]
+
+image:img/onBackPressureLatest.png[width:80%]
+http://reactivex.io/documentation/operators/backpressure.html[Marvel's source site]
+
+
